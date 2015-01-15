@@ -4,7 +4,6 @@
  * 
  * @brief xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx définir les grandes lignes sujet
  *
- * @author FERNANDEZ Fabrice, HIPPEAU Vincent
  */
 
 import objet.GardeManger;
@@ -77,13 +76,33 @@ public class Index {
 			nGardeManger.ajouterProduit(new Aliment(3000,"g","beurre"));
 			nGardeManger.ajouterProduit(new Aliment(2,"g","safran"));
 			nGardeManger.ajouterProduit(nAlimentC);
+			
+			nGardeManger.ajouterProduit(new Aliment(500,"g","farine"));
 		
 		// test
 //		nGardeManger.afficher();
-//		nGardeManger.afficher("farine");
+		nGardeManger.afficher("farine");
 //		nGardeManger.afficher("safran");
 //		nGardeManger.afficher("jus de pomme");
 //		nGardeManger.afficher("lait");
 		
+		Aliment nAlimentM= new Aliment(1,"g","safran");
+		if(nGardeManger.verifierQuantiteProduit(nAlimentM)) {
+			System.out.println("Assez : "+nAlimentM.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentM.toString());
+		}
+		Aliment nAlimentN= new Aliment(2,"g","safran");
+		if(nGardeManger.verifierQuantiteProduit(nAlimentN)){
+			System.out.println("Assez : "+nAlimentN.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentN.toString());
+		}
+		Aliment nAlimentO= new Aliment(3,"g","safran");
+		if(nGardeManger.verifierQuantiteProduit(nAlimentO)){
+			System.out.println("Assez : "+nAlimentO.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentO.toString());
+		}
 	} // main
 } // class
