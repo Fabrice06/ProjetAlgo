@@ -103,15 +103,15 @@ public class Recette {
 	/**
 	 * @return ListeRec pour la liste des ingrédients
 	 */
-	public ListeRec getListe() {
+	public ListeRec getIngredients() {
 		return liste;
 	} // ListeRec
 	
 	/**
 	 * @param ListeRec liste
 	 */
-	public void setListe(ListeRec liste) {
-		this.liste = liste;
+	public void setIngredients(ListeRec nListeIngredients) {
+		this.liste = nListeIngredients;
 	} // setter
 	
 	

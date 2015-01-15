@@ -116,6 +116,26 @@ public class LivreRecette {
 	} // procédure
 
 	/**
+	 * renvoyer la liste des ingrédients de la recette
+	 * 
+	 * @param String pNomRecette
+	 * 
+	 * @return ListeRec pour renvoyer la liste des ingrédients de la recette
+	 */
+	public ListeRec retournerIngredients(String pNomRecette) {
+		
+		Recette nRecette= (Recette)this.liste.rechercher(this.liste, pNomRecette);
+
+		if(nRecette == null) {
+			return new ListeRec();
+			
+		} else {
+			return nRecette.getIngredients();
+
+		} // else
+	} // ListeRec
+	
+	/**
 	 * surcharge de fonction
 	 * 
 	 * @return String: description complète du livre de recette (nom du livre et description de chaque recette)
