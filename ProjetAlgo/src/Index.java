@@ -92,19 +92,19 @@ public class Index {
 //		nGardeManger.afficher("lait");
 		
 		Aliment nAlimentM= new Aliment(1,"g","safran");
-		if(gardeManger.verifierQuantiteProduit(nAlimentM)) {
+		if(nGardeManger.verifierQuantiteProduit(nAlimentM)) {
 			System.out.println("Assez : "+nAlimentM.toString());
 		} else {
 			System.out.println("Pas assez : "+nAlimentM.toString());
 		}
 		Aliment nAlimentN= new Aliment(2,"g","safran");
-		if(gardeManger.verifierQuantiteProduit(nAlimentN)){
+		if(nGardeManger.verifierQuantiteProduit(nAlimentN)){
 			System.out.println("Assez : "+nAlimentN.toString());
 		} else {
 			System.out.println("Pas assez : "+nAlimentN.toString());
 		}
 		Aliment nAlimentO= new Aliment(3,"g","safran");
-		if(gardeManger.verifierQuantiteProduit(nAlimentO)){
+		if(nGardeManger.verifierQuantiteProduit(nAlimentO)){
 			System.out.println("Assez : "+nAlimentO.toString());
 		} else {
 			System.out.println("Pas assez : "+nAlimentO.toString());
