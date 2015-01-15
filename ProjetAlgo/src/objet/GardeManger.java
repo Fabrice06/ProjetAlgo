@@ -124,6 +124,7 @@ public class GardeManger {
 
 	} // boolean
 
+	
 	/**
 	 * vérifier si l'ensemble des ingrédients existent en quantité suffisante
 	 * 
@@ -132,20 +133,18 @@ public class GardeManger {
 	 * @return boolean vrai, si tous les ingrédients existent en quantité suffisante
 	 */
 	public boolean verifierIngredients(ListeRec pIngredients) {
-		boolean nReturn= false;
+		boolean nReturn= pIngredients.isVide();
 
-		if(!(pIngredients.isVide())){
+		if(!nReturn){
 			
 			if(this.verifierQuantiteProduit((Aliment)pIngredients.getTete())){
-				nReturn= this.verifierIngredients(pIngredients.getReste());
-			
+
+				if (pIngredients.getReste() != null){
+					nReturn= this.verifierIngredients(pIngredients.getReste());
+				} // if
 			} else {
 				nReturn= false;
 			}
-
-			if (pIngredients.getReste() != null){
-				nReturn= this.verifierIngredients(pIngredients.getReste());
-			} // if
 		} // if
 		
 	return nReturn;
@@ -162,32 +161,7 @@ public class GardeManger {
 
 	return nReturn;
 	} // String
-	
-	
-	
-	/**
-	 * vérifier si une recette est faisable par rapport au garde manger
-	 * 
-	 * @param Recette rRecette
-	 * 
-	 * @return boolean vrai, si la recette est faisable 
-	 */
-	public boolean verifierRecette(Recette pRecette) {
-		boolean nReturn = true;
-		
-		if(!(pRecette.getIngredients().isVide())&(nReturn)){	
-			nReturn =this.verifierQuantiteProduit((Aliment) pRecette.getIngredients().getTete());
-			
-			if ((pRecette.getIngredients().getReste() != null)&(nReturn)){
-				nReturn = this.verifierQuantiteProduit((Aliment) pRecette.getIngredients().getReste().getTete());
-			} // if
-		} // if
-		
-		return nReturn;
 
-	} // boolean
-	
-	
 } // class
 
 

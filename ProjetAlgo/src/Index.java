@@ -27,15 +27,6 @@ public class Index {
 		Aliment nAlimentB = new Aliment(1,"l","miel");
 		Aliment nAlimentC = new Aliment(300,"g","café");
 		
-			// ne marche pas (nullpointer exception): pourquoi ??
-			//ListeRec nListeA = new ListeRec(nIngredientA);
-			//ListeRec nListeB = new ListeRec(nIngredientB, nListeA);
-			//ListeRec nListe = new ListeRec(nIngredientC, nListeB);
-			//
-			//Recette nRecette = new Recette("Chouquettes", "Faire chauffer les casseroles.\n Ajouter l'ail, puis assaisonner.", nListe);
-			//nRecette.ajouterIngredient(new Ingredient(2,"gousse","ail"));
-			//nRecette.afficher();
-		
 		// ça marche 
 		Recette nRecetteA = new Recette("Chouquettes", "Faire chauffer les casseroles.\n Ajouter l'ail, puis assaisonner.");
 			nRecetteA.ajouterIngredient(new Aliment(2,"gousse","ail"));
@@ -52,11 +43,13 @@ public class Index {
 //		nRecetteB.afficher();
 
 		Recette nRecetteC = new Recette("rezette", "Faire rissoler le tofu.\n Ajouter les carottes, puis assaisonner de soja.");
+//		nRecetteC.ajouterIngredient(new Aliment(100,"g","raisin"));	
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","tofu"));
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","carotte"));
-//			nRecetteC.ajouterIngredient(new Aliment(1,"l","tabasco"));
+//		nRecetteC.ajouterIngredient(new Aliment(900,"g","carotte"));
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","tomate"));
-//		nRecetteC.afficher();	
+//		nRecetteC.ajouterIngredient(new Aliment(1,"l","tabasco"));
+		nRecetteC.afficher();	
 		
 		Recette nRecetteD = new Recette("Sorbet de crabe", "Faire mijoter les artichauts.\n Ajouter les crabes, puis assaisonner de soja.");
 			nRecetteD.ajouterIngredient(nAlimentA);
@@ -68,6 +61,7 @@ public class Index {
 			nLivreRecette.ajouterRecette(nRecetteA);
 			nLivreRecette.ajouterRecette(nRecetteB);
 			nLivreRecette.ajouterRecette(nRecetteC);
+			nLivreRecette.ajouterRecette(nRecetteD);
 
 		// test
 //		nLivreRecette.afficher();
@@ -91,30 +85,30 @@ public class Index {
 			nGardeManger.ajouterProduit(new Aliment(250,"g","tomate"));
 		
 		// test
-//		gardeManger.afficher();
-//		gardeManger.afficher("farine");
-//		gardeManger.afficher("safran");
-//		gardeManger.afficher("jus de pomme");
-//		gardeManger.afficher("lait");
+			nGardeManger.afficher();
+//		nGardeManger.afficher("farine");
+//		nGardeManger.afficher("safran");
+//		nGardeManger.afficher("jus de pomme");
+//		nGardeManger.afficher("lait");
 		
-//		Aliment nAlimentM= new Aliment(1,"g","safran");
-//		if(gardeManger.verifierQuantiteProduit(nAlimentM)) {
-//			System.out.println("Assez : "+nAlimentM.toString());
-//		} else {
-//			System.out.println("Pas assez : "+nAlimentM.toString());
-//		}
-//		Aliment nAlimentN= new Aliment(2,"g","safran");
-//		if(gardeManger.verifierQuantiteProduit(nAlimentN)){
-//			System.out.println("Assez : "+nAlimentN.toString());
-//		} else {
-//			System.out.println("Pas assez : "+nAlimentN.toString());
-//		}
-//		Aliment nAlimentO= new Aliment(3,"g","safran");
-//		if(gardeManger.verifierQuantiteProduit(nAlimentO)){
-//			System.out.println("Assez : "+nAlimentO.toString());
-//		} else {
-//			System.out.println("Pas assez : "+nAlimentO.toString());
-//		}
+		Aliment nAlimentM= new Aliment(1,"g","safran");
+		if(gardeManger.verifierQuantiteProduit(nAlimentM)) {
+			System.out.println("Assez : "+nAlimentM.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentM.toString());
+		}
+		Aliment nAlimentN= new Aliment(2,"g","safran");
+		if(gardeManger.verifierQuantiteProduit(nAlimentN)){
+			System.out.println("Assez : "+nAlimentN.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentN.toString());
+		}
+		Aliment nAlimentO= new Aliment(3,"g","safran");
+		if(gardeManger.verifierQuantiteProduit(nAlimentO)){
+			System.out.println("Assez : "+nAlimentO.toString());
+		} else {
+			System.out.println("Pas assez : "+nAlimentO.toString());
+		}
 		
 		ListeRec nIngredients = nLivreRecette.retournerIngredients("rezette");
 		if(nIngredients == null) {
@@ -125,8 +119,9 @@ public class Index {
 				System.out.println("Possible");
 			} else {
 				System.out.println("Pas possible");
-			}
-		}
+			} // else
+		} // else
+
 		
 	} // main
 	
