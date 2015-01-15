@@ -6,6 +6,7 @@
  *
  */
 
+import include.ListeRec;
 import objet.GardeManger;
 import objet.Aliment;
 import objet.LivreRecette;
@@ -104,5 +105,11 @@ public class Index {
 		} else {
 			System.out.println("Pas assez : "+nAlimentO.toString());
 		}
+		
+//		ListeRec nIngredients = nLivreRecette.retournerIngredients("Chouquettes");
+//		if(nIngredients.isVide()){
+//			System.out.println("Pas trouAssez : "+nAlimentN.toString());
+//		}
+		
 	} // main
 } // class
