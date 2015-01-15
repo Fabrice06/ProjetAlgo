@@ -16,7 +16,7 @@ import objet.Recette;
  * Point d'entrée du programme
  */
 public class Index {
-
+	
 	/**
 	 * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx donner les grandes lignes de ce qui va se passer dans ce main
 	 */
@@ -51,12 +51,18 @@ public class Index {
 			nRecetteB.ajouterIngredient(new Aliment(200,"g","tomate"));
 //		nRecetteB.afficher();
 
-		Recette nRecetteC = new Recette("Sorbet de crabe", "Faire mijoter les artichauts.\n Ajouter les crabes, puis assaisonner de soja.");
-			nRecetteC.ajouterIngredient(nAlimentA);
-			nRecetteC.ajouterIngredient(nAlimentB);
-			nRecetteC.ajouterIngredient(nAlimentC);
+		Recette nRecetteC = new Recette("rezette", "Faire rissoler le tofu.\n Ajouter les carottes, puis assaisonner de soja.");
+			nRecetteC.ajouterIngredient(new Aliment(200,"g","tofu"));
+			nRecetteC.ajouterIngredient(new Aliment(200,"g","carotte"));
+//			nRecetteC.ajouterIngredient(new Aliment(1,"l","tabasco"));
+			nRecetteC.ajouterIngredient(new Aliment(200,"g","tomate"));
 //		nRecetteC.afficher();	
 		
+		Recette nRecetteD = new Recette("Sorbet de crabe", "Faire mijoter les artichauts.\n Ajouter les crabes, puis assaisonner de soja.");
+			nRecetteD.ajouterIngredient(nAlimentA);
+			nRecetteD.ajouterIngredient(nAlimentB);
+			nRecetteD.ajouterIngredient(nAlimentC);
+//			nRecetteD.afficher();
 			
 		LivreRecette nLivreRecette = new LivreRecette("Thermomix");
 			nLivreRecette.ajouterRecette(nRecetteA);
@@ -79,37 +85,49 @@ public class Index {
 			nGardeManger.ajouterProduit(nAlimentC);
 			
 			nGardeManger.ajouterProduit(new Aliment(500,"g","farine"));
+			
+			nGardeManger.ajouterProduit(new Aliment(600,"g","tofu"));
+			nGardeManger.ajouterProduit(new Aliment(300,"g","carotte"));
+			nGardeManger.ajouterProduit(new Aliment(250,"g","tomate"));
 		
 		// test
-//		nGardeManger.afficher();
-		nGardeManger.afficher("farine");
-//		nGardeManger.afficher("safran");
-//		nGardeManger.afficher("jus de pomme");
-//		nGardeManger.afficher("lait");
+//		gardeManger.afficher();
+//		gardeManger.afficher("farine");
+//		gardeManger.afficher("safran");
+//		gardeManger.afficher("jus de pomme");
+//		gardeManger.afficher("lait");
 		
-		Aliment nAlimentM= new Aliment(1,"g","safran");
-		if(nGardeManger.verifierQuantiteProduit(nAlimentM)) {
-			System.out.println("Assez : "+nAlimentM.toString());
-		} else {
-			System.out.println("Pas assez : "+nAlimentM.toString());
-		}
-		Aliment nAlimentN= new Aliment(2,"g","safran");
-		if(nGardeManger.verifierQuantiteProduit(nAlimentN)){
-			System.out.println("Assez : "+nAlimentN.toString());
-		} else {
-			System.out.println("Pas assez : "+nAlimentN.toString());
-		}
-		Aliment nAlimentO= new Aliment(3,"g","safran");
-		if(nGardeManger.verifierQuantiteProduit(nAlimentO)){
-			System.out.println("Assez : "+nAlimentO.toString());
-		} else {
-			System.out.println("Pas assez : "+nAlimentO.toString());
-		}
-		
-//		ListeRec nIngredients = nLivreRecette.retournerIngredients("Chouquettes");
-//		if(nIngredients.isVide()){
-//			System.out.println("Pas trouAssez : "+nAlimentN.toString());
+//		Aliment nAlimentM= new Aliment(1,"g","safran");
+//		if(gardeManger.verifierQuantiteProduit(nAlimentM)) {
+//			System.out.println("Assez : "+nAlimentM.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentM.toString());
+//		}
+//		Aliment nAlimentN= new Aliment(2,"g","safran");
+//		if(gardeManger.verifierQuantiteProduit(nAlimentN)){
+//			System.out.println("Assez : "+nAlimentN.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentN.toString());
+//		}
+//		Aliment nAlimentO= new Aliment(3,"g","safran");
+//		if(gardeManger.verifierQuantiteProduit(nAlimentO)){
+//			System.out.println("Assez : "+nAlimentO.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentO.toString());
 //		}
 		
+		ListeRec nIngredients = nLivreRecette.retournerIngredients("rezette");
+		if(nIngredients == null) {
+			System.out.println("Pas de recette");
+			
+		} else {
+			if(nGardeManger.verifierIngredients(nIngredients)) {
+				System.out.println("Possible");
+			} else {
+				System.out.println("Pas possible");
+			}
+		}
+		
 	} // main
+	
 } // class

@@ -120,14 +120,14 @@ public class LivreRecette {
 	 * 
 	 * @param String pNomRecette
 	 * 
-	 * @return ListeRec pour renvoyer la liste des ingrédients de la recette
+	 * @return ListeRec pour renvoyer la liste des ingrédients de la recette 
 	 */
 	public ListeRec retournerIngredients(String pNomRecette) {
 		
 		Recette nRecette= (Recette)this.liste.rechercher(this.liste, pNomRecette);
 
 		if(nRecette == null) {
-			return new ListeRec();
+			return null;
 			
 		} else {
 			return nRecette.getIngredients();

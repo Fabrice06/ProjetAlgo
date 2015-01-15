@@ -123,6 +123,33 @@ public class GardeManger {
 		} // else
 
 	} // boolean
+
+	/**
+	 * vérifier si l'ensemble des ingrédients existent en quantité suffisante
+	 * 
+	 * @param ListeRec pIngredients
+	 * 
+	 * @return boolean vrai, si tous les ingrédients existent en quantité suffisante
+	 */
+	public boolean verifierIngredients(ListeRec pIngredients) {
+		boolean nReturn= false;
+
+		if(!(pIngredients.isVide())){
+			
+			if(this.verifierQuantiteProduit((Aliment)pIngredients.getTete())){
+				nReturn= this.verifierIngredients(pIngredients.getReste());
+			
+			} else {
+				nReturn= false;
+			}
+
+			if (pIngredients.getReste() != null){
+				nReturn= this.verifierIngredients(pIngredients.getReste());
+			} // if
+		} // if
+		
+	return nReturn;
+	} // boolean
 	
 	/**
 	 * surcharge de fonction
