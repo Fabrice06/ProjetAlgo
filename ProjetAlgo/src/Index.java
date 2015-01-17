@@ -43,7 +43,7 @@ public class Index {
 //		nRecetteB.afficher();
 
 		Recette nRecetteC = new Recette("rezette", "Faire rissoler le tofu.\n Ajouter les carottes, puis assaisonner de soja.");
-//		nRecetteC.ajouterIngredient(new Aliment(100,"g","raisin"));	
+		nRecetteC.ajouterIngredient(new Aliment(100,"g","raisin"));	
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","tofu"));
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","carotte"));
 //		nRecetteC.ajouterIngredient(new Aliment(900,"g","carotte"));
