@@ -9,8 +9,6 @@ package objet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import include.ListeRec;
-
 /**
  * cette classe permet de manipuler un aliment.
  * Cet objet est défini par les éléments suivants:
