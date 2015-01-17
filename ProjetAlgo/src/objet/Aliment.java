@@ -16,8 +16,6 @@ import include.ListeRec;
  *  > un nom.
  */
 public class Aliment {
-
-
 	
 	// ------------------------------------------------------
 	// Attributs
@@ -31,7 +29,7 @@ public class Aliment {
 	// Constructeurs
 	
 	public Aliment() {
-		this.construire(0, "g", "");
+		this.construire(0, "", "");
 	} // constructeur par défaut
 
 	/**
@@ -70,30 +68,11 @@ public class Aliment {
 	} // setter
 
 	/**
-//	 * @return String pour l'unité de mesure
-//	 */
-//	private String getUnite() {
-//		return unite;
-//	} // String
-//	/**
-//	 * @param String unite
-//	 */
-//	private void setUnite(String unite) {
-//		this.unite = unite;
-//	} // setter
-
-	/**
 	 * @return String pour le nom de l'ingrédient
 	 */
 	private String getNom() {
 		return nom;
 	} // String
-//	/**
-//	 * @param String nom
-//	 */
-//	private void setNom(String nom) {
-//		this.nom = nom;
-//	} // setter
 
 	
 	// ------------------------------------------------------
