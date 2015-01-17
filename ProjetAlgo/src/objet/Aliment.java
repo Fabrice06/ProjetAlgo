@@ -1,10 +1,12 @@
 /**
  * @file Aliment.java
  * 
- * @brief xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ * @brief triplet constitué d'un nom, d'une quantité et d'une unité
  */
 	
-	package objet;
+package objet;
+
+import include.ListeRec;
 
 /**
  * cette classe permet de manipuler un aliment.
@@ -14,6 +16,8 @@
  *  > un nom.
  */
 public class Aliment {
+
+
 	
 	// ------------------------------------------------------
 	// Attributs
@@ -26,18 +30,28 @@ public class Aliment {
 	// ------------------------------------------------------
 	// Constructeurs
 	
-	public Aliment() {		
+	public Aliment() {
+		this.construire(0, "g", "");
 	} // constructeur par défaut
 
 	/**
 	 * @param int pQuantite, String pUnite, String pNom
 	 */	
 	public Aliment(int pQuantite, String pUnite, String pNom) {
+		this.construire(pQuantite, pUnite, pNom);
+	} // constructeur
+
+	/**
+	 * éviter une succession de constructeurs
+	 * 
+	 * @param int pQuantite, String pUnite, String pNom
+	 */
+	private void construire(int pQuantite, String pUnite, String pNom){
 		this.quantite= pQuantite;
 		this.unite= pUnite;
 		this.nom= pNom;
-	} // constructeur
-
+	} // procédure
+	
 	
 	// ------------------------------------------------------
 	// get/set
@@ -56,30 +70,30 @@ public class Aliment {
 	} // setter
 
 	/**
-	 * @return String pour l'unité de mesure
-	 */
-	public String getUnite() {
-		return unite;
-	} // String
-	/**
-	 * @param String unite
-	 */
-	public void setUnite(String unite) {
-		this.unite = unite;
-	} // setter
+//	 * @return String pour l'unité de mesure
+//	 */
+//	private String getUnite() {
+//		return unite;
+//	} // String
+//	/**
+//	 * @param String unite
+//	 */
+//	private void setUnite(String unite) {
+//		this.unite = unite;
+//	} // setter
 
 	/**
 	 * @return String pour le nom de l'ingrédient
 	 */
-	public String getNom() {
+	private String getNom() {
 		return nom;
 	} // String
-	/**
-	 * @param String nom
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	} // setter
+//	/**
+//	 * @param String nom
+//	 */
+//	private void setNom(String nom) {
+//		this.nom = nom;
+//	} // setter
 
 	
 	// ------------------------------------------------------

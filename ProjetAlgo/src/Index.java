@@ -37,13 +37,13 @@ public class Index {
 
 		Recette nRecetteB = new Recette("Tofu à la mexicaine", "Faire pour le mieux.\n Ajouter le tofu, puis le tabasco.");
 			nRecetteB.ajouterIngredient(new Aliment(200,"g","tofu"));
-			nRecetteB.ajouterIngredient(new Aliment(1,"l","tabasco"));
+//			nRecetteB.ajouterIngredient(new Aliment(1,"l","tabasco"));
 			nRecetteB.ajouterIngredient(new Aliment(200,"g","carotte"));
 			nRecetteB.ajouterIngredient(new Aliment(200,"g","tomate"));
 //		nRecetteB.afficher();
 
 		Recette nRecetteC = new Recette("rezette", "Faire rissoler le tofu.\n Ajouter les carottes, puis assaisonner de soja.");
-//		nRecetteC.ajouterIngredient(new Aliment(100,"g","raisin"));	
+		nRecetteC.ajouterIngredient(new Aliment(100,"g","raisin"));	
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","tofu"));
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","carotte"));
 //		nRecetteC.ajouterIngredient(new Aliment(900,"g","carotte"));
