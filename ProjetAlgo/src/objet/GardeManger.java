@@ -162,6 +162,8 @@ public class GardeManger {
 
 	return nReturn;
 	} // String
+	
+	
 
 } // class
 

@@ -49,7 +49,7 @@ public class Index {
 //		nRecetteC.ajouterIngredient(new Aliment(900,"g","carotte"));
 			nRecetteC.ajouterIngredient(new Aliment(200,"g","tomate"));
 //		nRecetteC.ajouterIngredient(new Aliment(1,"l","tabasco"));
-		nRecetteC.afficher();	
+//		nRecetteC.afficher();	
 		
 		Recette nRecetteD = new Recette("Sorbet de crabe", "Faire mijoter les artichauts.\n Ajouter les crabes, puis assaisonner de soja.");
 			nRecetteD.ajouterIngredient(nAlimentA);
@@ -91,6 +91,7 @@ public class Index {
 //		nGardeManger.afficher("jus de pomme");
 //		nGardeManger.afficher("lait");
 		
+
 		Aliment nAlimentM= new Aliment(1,"g","safran");
 		if(nGardeManger.verifierQuantiteProduit(nAlimentM)) {
 			System.out.println("Assez : "+nAlimentM.toString());
@@ -117,11 +118,41 @@ public class Index {
 		} else {
 			if(nGardeManger.verifierIngredients(nIngredientsA)) {
 				System.out.println("Possible");
-			} else {
-				System.out.println("Pas possible");
-			} // else
-		} // else
+			}
+		}
 
+//		Aliment nAlimentM= new Aliment(1,"g","safran");
+//		if(nGardeManger.verifierQuantiteProduit(nAlimentM)) {
+//			System.out.println("Assez : "+nAlimentM.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentM.toString());
+//		}
+//		Aliment nAlimentN= new Aliment(2,"g","safran");
+//		if(nGardeManger.verifierQuantiteProduit(nAlimentN)){
+//			System.out.println("Assez : "+nAlimentN.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentN.toString());
+//		}
+//		Aliment nAlimentO= new Aliment(3,"g","safran");
+//		if(nGardeManger.verifierQuantiteProduit(nAlimentO)){
+//			System.out.println("Assez : "+nAlimentO.toString());
+//		} else {
+//			System.out.println("Pas assez : "+nAlimentO.toString());
+//		}
+//		
+//		ListeRec nIngredients = nLivreRecette.retournerIngredients("rezette");
+//		if(nIngredients == null) {
+//			System.out.println("Pas de recette");
+//			
+//		} else {
+//			if(nGardeManger.verifierIngredients(nIngredients)) {
+//				System.out.println("Possible");
+//			} else {
+//				System.out.println("Pas possible");
+//			} // else
+//		} // else
+			
+			
 		ListeRec nIngredientsB = nLivreRecette.retournerIngredients("rezette");
 		if(nIngredientsB == null) {
 			System.out.println("Pas de recette");
