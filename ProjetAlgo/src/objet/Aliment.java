@@ -137,5 +137,9 @@ public class Aliment {
 		
 	return this.quantite + " " + this.unite + " " + this.nom;
 	} // String
+
 	
+	public static void main(String[] args) {
+		
+	} // main
 } // class

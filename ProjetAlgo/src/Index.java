@@ -144,10 +144,6 @@ public class Index {
 				} // else
 			} // else
 		} // else
-		
-		
-		
-		
+			
 	} // main
-	
 } // class
