@@ -64,7 +64,7 @@ public class Index {
 			nLivreRecette.ajouterRecette(nRecetteD);
 
 		// test
-//		nLivreRecette.afficher();
+		nLivreRecette.afficher();
 //		nLivreRecette.afficher("Chouquettes");
 //		nLivreRecette.afficher("Sorbet de crabe");
 //		nLivreRecette.afficher("zzzz");
@@ -85,7 +85,7 @@ public class Index {
 			nGardeManger.ajouterProduit(new Aliment(250,"g","tomate"));
 		
 		// test
-			nGardeManger.afficher();
+//			nGardeManger.afficher();
 //		nGardeManger.afficher("farine");
 //		nGardeManger.afficher("safran");
 //		nGardeManger.afficher("jus de pomme");
