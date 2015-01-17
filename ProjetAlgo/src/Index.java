@@ -110,18 +110,43 @@ public class Index {
 			System.out.println("Pas assez : "+nAlimentO.toString());
 		}
 		
-		ListeRec nIngredients = nLivreRecette.retournerIngredients("rezette");
-		if(nIngredients == null) {
+		ListeRec nIngredientsA = nLivreRecette.retournerIngredients("rezette");
+		if(nIngredientsA == null) {
 			System.out.println("Pas de recette");
 			
 		} else {
-			if(nGardeManger.verifierIngredients(nIngredients)) {
+			if(nGardeManger.verifierIngredients(nIngredientsA)) {
 				System.out.println("Possible");
 			} else {
 				System.out.println("Pas possible");
 			} // else
 		} // else
 
+		ListeRec nIngredientsB = nLivreRecette.retournerIngredients("rezette");
+		if(nIngredientsB == null) {
+			System.out.println("Pas de recette");
+			
+		} else {
+			if(nGardeManger.verifierIngredients(nIngredientsB)) {
+				System.out.println("Possible");
+				
+			} else {
+				System.out.println("Pas possible !");
+				
+				Recette nRecette= nLivreRecette.premiereRecette(nLivreRecette.getListe(), nGardeManger);
+				
+				if(nRecette == null) {
+					System.out.println("Aucune recette ne peut être réalisée avec ce garde manger !");
+				
+				} else {
+					System.out.println("Mais il existe une autre recette:");
+					nRecette.afficher();
+				} // else
+			} // else
+		} // else
+		
+		
+		
 		
 	} // main
 	

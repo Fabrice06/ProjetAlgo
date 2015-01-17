@@ -116,11 +116,37 @@ public class LivreRecette {
 	} // procédure
 
 	/**
+	 * vérifier si l'ensemble des ingrédients existent en quantité suffisante pour réaliser la première recette
+	 * 
+	 * @param ListeRec pListe, GardeManger pGardeManger
+	 * 
+	 * @return Recette si tous les ingrédients existent en quantité suffisante, sinon null
+	 */
+	public Recette premiereRecette(ListeRec pListe, GardeManger pGardeManger) {
+		Recette nReturn= null;
+		
+		if(!pListe.isVide()){
+			ListeRec nIngredients= ((Recette)pListe.getTete()).getIngredients();
+			
+			if(pGardeManger.verifierIngredients(nIngredients)) {
+				nReturn= (Recette)pListe.getTete();
+				
+			} else {
+				if (pListe.getReste() != null)
+					nReturn= this.premiereRecette(pListe.getReste(), pGardeManger);
+
+			} // else
+		} // if
+		
+	return nReturn;
+	} // Recette
+	
+	/**
 	 * renvoyer la liste des ingrédients de la recette
 	 * 
 	 * @param String pNomRecette
 	 * 
-	 * @return ListeRec pour renvoyer la liste des ingrédients de la recette 
+	 * @return ListeRec pour renvoyer la liste des ingrédients de la recette, sinon null
 	 */
 	public ListeRec retournerIngredients(String pNomRecette) {
 		

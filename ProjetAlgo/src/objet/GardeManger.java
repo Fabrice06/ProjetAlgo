@@ -142,8 +142,9 @@ public class GardeManger {
 				if (pIngredients.getReste() != null){
 					nReturn= this.verifierIngredients(pIngredients.getReste());
 				} // if
-			} else {
-				nReturn= false;
+				
+//			} else {
+//				nReturn= false;
 			}
 		} // if
 		
