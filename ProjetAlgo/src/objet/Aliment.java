@@ -105,24 +105,57 @@ public class Aliment {
 
 	return nReturn.trim(); 
 	} // String
-	
+
 	/** 
-	 * @return String le nom tel qu'il doit être affiché
+	 * @return String l'unité telle qu'elle doit être affichée
+	 */
+	private String afficherUnite() {
+		
+		String nReturn= "";
+		if (!this.unite.isEmpty()){
+			nReturn= this.unite;
+			
+			// si l'unité est g ou l alors on n'accorde pas l'unité en fonction de la quantité
+			Pattern nPattern = Pattern.compile("^[gl]$");  
+			Matcher nMatcher = nPattern.matcher(this.unite);
+			
+			if(!nMatcher.find()) {
+				if((this.quantite <= -2) || (this.quantite >= 2))  nReturn+= "s";
+			} // if
+		} // if
+
+	return nReturn;
+	} // String
+	/** 
+	 * @return String le nom destiné à l'affichage
 	 */
 	private String afficherNom() {
+		String nAliment= "beurre|lait|poivre|radis|riz|sel|sucre vanillé";
+		String nConteneur= "botte|cuillère à café|cuillère à soupe|motte|noix|paquet|pincée|poignée|sachet";
 		
 		String nReturn= "";
 		if(!this.nom.isEmpty()) {
 			
-			if (!this.unite.isEmpty()){
+			if (this.unite.isEmpty()) {
+				if(!nAliment.toLowerCase().contains(this.nom.toLowerCase())) {
+					if((this.quantite <= -2) || (this.quantite >= 2))  nReturn= this.nom+"s";
+				} // if
+				
+			} else {
 				// si le nom commence par aehiouy alors on apostrophe l'article partitif de
-				Pattern nPattern = Pattern.compile("^[aehiouy].*");  
-				Matcher nMatcher = nPattern.matcher(this.nom);
-				nReturn= (nMatcher.find())? "d'" : "de ";
-			} // if
-			nReturn+= this.nom;
-			
-			if(this.quantite != 0) nReturn+="s";
+				Pattern nPatternA = Pattern.compile("^[aehiouy].*");  
+				Matcher nMatcherA = nPatternA.matcher(this.nom);
+				nReturn= (nMatcherA.find())? "d'" : "de ";
+				nReturn+= this.nom;
+				
+				// si l'unité est un contenant
+				if(nConteneur.toLowerCase().contains(this.unite.toLowerCase())) {
+					if(!nAliment.toLowerCase().contains(this.nom.toLowerCase())) {
+						if((this.quantite <= -2) || (this.quantite >= 2)) nReturn+= "s";
+					} // if
+				} // if
+
+			} // if	
 		} // if
 
 	return nReturn;
@@ -180,29 +213,36 @@ public class Aliment {
 	 */
 	public String toString() {
 		// cette approche n'est pas des plus élégante, mais c'est la plus maintenable
-	return this.nettoyerEspace(this.quantite + " " + this.unite + " " + this.afficherNom());
+	return this.nettoyerEspace(this.quantite + " " + this.afficherUnite() + " " + this.afficherNom());
 	} // String
 
 	
-//	public static void main(String[] args) {
-//			
-//		Aliment nAlimentA = new Aliment(4,"oeuf");
-//		Aliment nAlimentB = new Aliment(1,"l","lait");
-//		Aliment nAlimentC = new Aliment(30,"g","beurre");			
-//		Aliment nAlimentD = new Aliment(1,"sachet","sucre vanillé");
-//		
-//		// test fonction toString()
-//		System.out.println("la fonction toString retourne l'aliment: "+ nAlimentD.toString());
-//		
-//		// test fonction equals()
-//		if(nAlimentA.equals("oeuf")) System.out.println("l'aliment " +nAlimentA.getNom()+ " est égal à l'aliment oeuf");
-//		if(nAlimentA.equals("lait")) System.out.println("l'aliment " +nAlimentA.getNom()+ " n'est pas égal à l'aliment lait");
-//		
-//		Aliment nAlimentE= nAlimentA;
-//		if(nAlimentA.equals(nAlimentE)) System.out.println("l'objet "+nAlimentA.getNom()+" est égal à l'objet "+nAlimentE.getNom());
-//
-//		if(nAlimentA.equals(new Aliment(8,"oeuf"))) System.out.println("l'aliment "+nAlimentA.getNom()+" est égal à l'aliment oeuf");
-//
-//	} // main
+	public static void main(String[] args) {
+			
+		Aliment nAlimentA = new Aliment(4,"oeuf");
+		Aliment nAlimentB = new Aliment(1,"l","lait");
+		Aliment nAlimentC = new Aliment(30,"g","beurre");			
+		Aliment nAlimentD = new Aliment(2,"sachet","sucre vanillé");
+		Aliment nAlimentE = new Aliment(1,"botte","radis");
+		Aliment nAlimentF = new Aliment(2,"botte","carotte");
+		
+		// test fonction toString()
+		System.out.println("nAlimentA.toString() retourne : "+ nAlimentA.toString());
+		System.out.println("nAlimentB.toString() retourne : "+ nAlimentB.toString());
+		System.out.println("nAlimentC.toString() retourne : "+ nAlimentC.toString());
+		System.out.println("nAlimentD.toString() retourne : "+ nAlimentD.toString());
+		System.out.println("nAlimentE.toString() retourne : "+ nAlimentE.toString());
+		System.out.println("nAlimentF.toString() retourne : "+ nAlimentF.toString());
+		
+		// test fonction equals()
+		if(nAlimentA.equals("oeuf")) System.out.println("l'aliment " +nAlimentA.getNom()+ " est égal à l'aliment oeuf");
+		if(!nAlimentA.equals("lait")) System.out.println("l'aliment " +nAlimentA.getNom()+ " n'est pas égal à l'aliment lait");
+		
+		Aliment nAlimentG= nAlimentA;
+		if(nAlimentA.equals(nAlimentG)) System.out.println("l'objet "+nAlimentA.getNom()+" est égal à l'objet "+nAlimentG.getNom());
+
+		if(nAlimentA.equals(new Aliment(8,"oeuf"))) System.out.println("l'aliment "+nAlimentA.getNom()+" est égal à l'objet oeuf");
+
+	} // main
 
 } // class
