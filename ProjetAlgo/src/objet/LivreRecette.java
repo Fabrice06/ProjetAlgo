@@ -172,7 +172,98 @@ public class LivreRecette {
 
 	return nReturn;
 	} // String
+public static void main(String[] args) {
+		
 
+		Aliment nAlimentA = new Aliment(300,"g","farine");
+		Aliment nAlimentB = new Aliment(300,"g","sucre");
+		Aliment nAlimentC = new Aliment(30,"g","beurre");			
+		Aliment nAlimentD = new Aliment(4,"","oeuf");
+		Aliment nAlimentE = new Aliment(1,"sachet","sucre vanillé");
+		Aliment nAlimentF = new Aliment(1,"l","lait");
+		Aliment nAlimentG = new Aliment(1,"","poulet");
+		Aliment nAlimentH = new Aliment(5,"c","curry");
+		Aliment nAlimentI = new Aliment(300,"g","carottes");
+		Aliment nAlimentJ = new Aliment(200,"g","courgettes");
+		Aliment nAlimentK = new Aliment(100,"g","épinards");
+		Aliment nAlimentL = new Aliment(1000,"g","pommes");
+		Aliment nAlimentM = new Aliment(500,"g","sucre");
+		Aliment nAlimentN = new Aliment(1000,"g","miel");
+		Aliment nAlimentO = new Aliment(500,"g","pate");
+		
+		// Pates au beurre
+		String nomA = "Pates au beurre";
+		String descriptifA =  "Faire chauffer les casseroles.\n Faire bouillir l'eau. \n Mettre les pates, quand c'est cuit mettre le beurre.";
+				
+		Recette nRecetteA = new Recette(nomA, descriptifA);
+		nRecetteA.ajouterIngredient(nAlimentO);
+		nRecetteA.ajouterIngredient(nAlimentC);
+				
+		// Gateau au yaourt
+		String nomB = "Gateau au yaourt";
+		String descriptifB =  "Mettre la farine, les oeufs, le sucre et le lait suivi du sucre vanillé, puis mettre au four. ";
+						
+		Recette nRecetteB = new Recette(nomB, descriptifB);
+		nRecetteB.ajouterIngredient(nAlimentA);
+		nRecetteB.ajouterIngredient(nAlimentB);
+		nRecetteB.ajouterIngredient(nAlimentF);
+		nRecetteB.ajouterIngredient(nAlimentD);
+		nRecetteB.ajouterIngredient(nAlimentE);
+				
+		// Poulet au curry
+		String nomC = "Poulet au curry";
+		String descriptifC =  "Mettre au four le poulet soupoudré de curry.";
+								
+		Recette nRecetteC = new Recette(nomC, descriptifC);
+		nRecetteC.ajouterIngredient(nAlimentG);
+		nRecetteC.ajouterIngredient(nAlimentH);
+				
+		// Soupe de légumes
+		String nomD = "Soupe de légumes";
+		String descriptifD =  "Mixer tout les légumes et faire cuire puis ajouter le beurre.";
+								
+		Recette nRecetteD = new Recette(nomD, descriptifD);
+		nRecetteD.ajouterIngredient(nAlimentI);
+		nRecetteD.ajouterIngredient(nAlimentJ);
+		nRecetteD.ajouterIngredient(nAlimentK);
+		nRecetteD.ajouterIngredient(nAlimentC);
+				
+		// Compotte de pomme
+		String nomE = "Compotte de pomme";
+		String descriptifE =  "Mixer toutes les pommes et faire cuire puis ajouter le sucre.";
+								
+		Recette nRecetteE = new Recette(nomE, descriptifE);
+		nRecetteE.ajouterIngredient(nAlimentL);
+		nRecetteE.ajouterIngredient(nAlimentM);
+				
+		// Poulet au miel
+		String nomF = "Poulet au miel";
+		String descriptifF =  "Faire cuire le poulet et arroser de miel";
+								
+		Recette nRecetteF = new Recette(nomF, descriptifF);
+		nRecetteF.ajouterIngredient(nAlimentG);
+		nRecetteF.ajouterIngredient(nAlimentN);
+				
+		// Création du livre de recette
+				
+		LivreRecette nLivreRecette = new LivreRecette("Thermomix");
+		nLivreRecette.ajouterRecette(nRecetteA);
+		nLivreRecette.ajouterRecette(nRecetteB);
+		nLivreRecette.ajouterRecette(nRecetteC);
+		nLivreRecette.ajouterRecette(nRecetteD);
+		nLivreRecette.ajouterRecette(nRecetteE);
+		nLivreRecette.ajouterRecette(nRecetteF);		
+		
+		nLivreRecette.afficher();
+	
+		System.out.println("Afficher une recette présente par son nom");
+		nLivreRecette.afficher("Compotte de pomme");
+		
+		System.out.println("Afficher une recette non présente par son nom");
+		nLivreRecette.afficher("Compotte");
+		
+		
+	}
 } // class
 
 
