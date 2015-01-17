@@ -18,7 +18,7 @@ public class Aliment {
 	// ------------------------------------------------------
 	// Attributs
 	
-	private int qte;
+	private int quantite; // float ??
 	private String unite;
 	private String nom;
 	
@@ -30,12 +30,12 @@ public class Aliment {
 	} // constructeur par défaut
 
 	/**
-	 * @param int qte, String unite, String nom
+	 * @param int pQuantite, String pUnite, String pNom
 	 */	
-	public Aliment(int qte, String unite, String nom) {
-		this.qte=qte;
-		this.unite=unite;
-		this.nom=nom;
+	public Aliment(int pQuantite, String pUnite, String pNom) {
+		this.quantite= pQuantite;
+		this.unite= pUnite;
+		this.nom= pNom;
 	} // constructeur
 
 	
@@ -46,13 +46,13 @@ public class Aliment {
 	 * @return integer pour la quantité
 	 */
 	public int getQuantite() {
-		return qte;
+		return quantite;
 	} // int
 	/**
-	 * @param int qte
+	 * @param int pQuantite
 	 */
-	public void setQuantite(int qte) {
-		this.qte = qte;
+	public void setQuantite(int pQuantite) {
+		this.quantite = pQuantite;
 	} // setter
 
 	/**
@@ -89,21 +89,11 @@ public class Aliment {
 	 * @return boolean vrai, si l'aliment n'est plus disponible
 	 */
 	public boolean isVide() {
-		return (qte <= 0);
+		return (quantite <= 0);
 	} // boolean
 	
 	/**
-	 * @brief surcharge de fonction
-	 * 
-	 * @return description complète de l'objet
-	 */
-	public String toString() {
-		
-	return this.qte + " " + this.unite + " " + this.nom;
-	} // String
-
-	/**
-	 * @brief surcharge de fonction
+	 * @brief @brief surcharge de la fonction
 	 * 
 	 * Pour que deux objets de cette classe soient égaux, il faut réunir les conditions suivantes:
 	 *   > être de même type (pObj instanceof Aliment),
@@ -112,15 +102,47 @@ public class Aliment {
 	 * @return boolean vrai, si les deux objets ont le même nom
 	 */
 	public boolean equals(Object pObj) {
-		if(pObj instanceof String) {
-			return nom.equals(pObj);
-			
-		} else if(pObj instanceof Aliment) {
-			return nom.equals(((Aliment)pObj).getNom());
-			
-		} else {
-			return this.equals(pObj);
-		} // else
+		
+		// implémentation par défaut
+		if (this == pObj) return true;
+		
+		// utilisation de la fonction equals entre deux String
+		if(pObj instanceof String) return this.nom.equals(pObj);
+		
+		// utilisation de la fonction equals entre deux String
+		if(pObj instanceof Aliment) return this.nom.equals(((Aliment)pObj).getNom());
+
+		return false;
     } // boolean
+
+	/**
+	 * @brief surcharge de la fonction
+	 * 
+	 * Comme la méthode equals() est redéfinie, il est nécessaire de redéfinir la méthode hashCode()
+	 * pour respecter le contrat qui précise que deux objets égaux doivent avoir le même hashcode.
+	 *   
+	 * @return int valeur de hash calculée
+	 */
+	public int hashCode() {
+		
+		final int nPremier= 31; // nombre premier
+	    int nReturn= 1;
+	    
+	    nReturn = nPremier * nReturn + ((nom == null)? 0 : nom.hashCode());
+	    // attention si quantite n'est pas un integer il faut le caster
+	    nReturn = nPremier * nReturn + quantite;
+
+	    return nReturn;
+	} // int
+
+	/**
+	 * @brief surcharge de la fonction
+	 * 
+	 * @return description complète de l'objet
+	 */
+	public String toString() {
+		
+	return this.quantite + " " + this.unite + " " + this.nom;
+	} // String
 	
 } // class

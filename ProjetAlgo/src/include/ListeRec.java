@@ -26,7 +26,6 @@ public class ListeRec {
 	
 	public ListeRec() {
 		this.construire(true, null, null);
-//		isListeVide = true;
 	} // constructeur par défaut
 
 	/**
@@ -36,8 +35,6 @@ public class ListeRec {
 	 */	
 	public ListeRec(Object pTete) {
 		this.construire(false, pTete, null);
-//		isListeVide = false;
-//		laTete = tete;
 	} // constructeur
 
 	/**
@@ -47,10 +44,6 @@ public class ListeRec {
 	 */	
 	public ListeRec(Object pTete, ListeRec pReste) {
 		this.construire(false, pTete, pReste);
-		
-//		laTete = tete;
-//		leReste = liste;
-//		listeVide = false;
 	} // constructeur
 
 	/**

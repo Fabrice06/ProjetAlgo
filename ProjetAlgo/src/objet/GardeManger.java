@@ -151,7 +151,7 @@ public class GardeManger {
 	} // boolean
 	
 	/**
-	 * surcharge de fonction
+	 * @brief surcharge de la fonction
 	 * 
 	 * @return description complète de l'objet
 	 */

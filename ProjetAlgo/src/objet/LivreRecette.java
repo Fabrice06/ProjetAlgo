@@ -136,7 +136,7 @@ public class LivreRecette {
 	} // ListeRec
 	
 	/**
-	 * surcharge de fonction
+	 * @brief surcharge de la fonction
 	 * 
 	 * @return String: description complète du livre de recette (nom du livre et description de chaque recette)
 	 */

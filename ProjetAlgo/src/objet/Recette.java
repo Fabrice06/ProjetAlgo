@@ -135,7 +135,51 @@ public class Recette {
 	} // procédure
 
 	/**
-	 * surcharge de fonction
+	 * @brief surcharge de la fonction
+	 * 
+	 * Pour que deux objets de cette classe soient égaux, il faut réunir les conditions suivantes:
+	 *   > être de même type (pObj instanceof Aliment),
+	 *   > avoir le même nom.
+	 *   
+	 * @return boolean vrai, si les deux objets ont le même nom
+	 */
+	public boolean equals(Object pObj) {
+		
+		// implémentation par défaut
+		if (this == pObj) return true;
+		
+		// utilisation de la fonction equals entre deux String
+		if(pObj instanceof String) return this.nom.equals(pObj);
+		
+		// utilisation de la fonction equals entre deux String
+		if(pObj instanceof Recette) return this.nom.equals(((Recette)pObj).getNom());
+
+		return false;
+    } // boolean
+
+	/**
+	 * @brief surcharge de la fonction
+	 * 
+	 * Comme la méthode equals() est redéfinie, il est nécessaire de redéfinir la méthode hashCode()
+	 * pour respecter le contrat qui précise que deux objets égaux doivent avoir le même hashcode.
+	 *   
+	 * @return int valeur de hash calculée
+	 */
+	public int hashCode() {
+		
+		final int nPremier= 31; // nombre premier
+	    int nReturn= 1;
+	    
+	    nReturn = nPremier * nReturn + ((nom == null)? 0 : nom.hashCode());
+	    nReturn = nPremier * nReturn + ((realisation == null)? 0 : realisation.hashCode());
+	    // pas sûr à 100% sur le code suivant:
+	    nReturn = nPremier * nReturn + ((liste == null)? 0 : liste.hashCode()); 
+
+	    return nReturn;
+	} // int
+
+	/**
+	 * @brief surcharge de la fonction
 	 * 
 	 * @return description complète de l'objet
 	 */
@@ -148,27 +192,5 @@ public class Recette {
 
 	return nReturn;
 	} // String
-
-	
-	/**
-	 * @brief surcharge de fonction
-	 * 
-	 * Pour que deux objets de cette classe soient égaux, il faut réunir les conditions suivantes:
-	 *   > être de même type (pObj instanceof Aliment),
-	 *   > avoir le même nom.
-	 *   
-	 * @return boolean vrai, si les deux objets ont le même nom
-	 */
-	public boolean equals(Object pObj) {
-		if(pObj instanceof String) {
-			return nom.equals(pObj);
-			
-		} else if(pObj instanceof Aliment) {
-			return nom.equals(((Recette)pObj).getNom());
-			
-		} else {
-			return this.equals(pObj);
-		} // else
-    } // boolean
 	
 } // class
