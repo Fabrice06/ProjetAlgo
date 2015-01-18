@@ -55,7 +55,7 @@ public class LivreRecette {
 	private void construire(String pNom, ListeRec pListe){
 		this.nom= pNom;
 		this.liste= pListe;
-	} // procédure
+	} // void
 	
 	
 	// ------------------------------------------------------
@@ -67,32 +67,26 @@ public class LivreRecette {
 	public ListeRec getListe() {
 		return liste;
 	} // ListeRec
-	/**
-	 * @param ListeRec liste
-	 */
-	public void setListe(ListeRec liste) {
-		this.liste = liste;
-	} // setter
 	
 	
 	// ------------------------------------------------------
 	// méthodes
 
 	/**
-	 * permets d'ajouter un produit alimentaire dans le garde manger
+	 * permets l'ajout d'une recette dans le livre de recettes
 	 * 
 	 * @param Recette pRecette
 	 */
 	public void ajouterRecette(Recette pRecette) {
 		this.liste = this.liste.insert(this.liste, pRecette);
-	} // procédure
+	} // void
 
 	/**
 	 * afficher toutes les recettes
 	 */
 	public void afficher() {
 		System.out.println(this.toString());
-	} // procédure
+	} // void
 	
 	/**
 	 * afficher une recette décrite par son nom, si elle existe
@@ -113,33 +107,7 @@ public class LivreRecette {
 		} // else
 		
 		System.out.println(nMsg);
-	} // procédure
-
-	/**
-	 * vérifier si l'ensemble des ingrédients existent en quantité suffisante pour réaliser la première recette
-	 * 
-	 * @param ListeRec pListe, GardeManger pGardeManger
-	 * 
-	 * @return Recette si tous les ingrédients existent en quantité suffisante, sinon null
-	 */
-	public Recette premiereRecette(ListeRec pListe, GardeManger pGardeManger) {
-		Recette nReturn= null;
-		
-		if(!pListe.isVide()){
-			ListeRec nIngredients= ((Recette)pListe.getTete()).getIngredients();
-			
-			if(pGardeManger.verifierIngredients(nIngredients)) {
-				nReturn= (Recette)pListe.getTete();
-				
-			} else {
-				if (pListe.getReste() != null)
-					nReturn= this.premiereRecette(pListe.getReste(), pGardeManger);
-
-			} // else
-		} // if
-		
-	return nReturn;
-	} // Recette
+	} // void
 	
 	/**
 	 * renvoyer la liste des ingrédients de la recette
@@ -164,7 +132,7 @@ public class LivreRecette {
 	/**
 	 * @brief surcharge de la fonction
 	 * 
-	 * @return String: description complète du livre de recette (nom du livre et description de chaque recette)
+	 * @return String: description complète du livre de recettes (nom du livre et description de chaque recette)
 	 */
 	public String toString() {
 		String nReturn= "livre de recette: "+this.nom+":\n";
@@ -172,98 +140,150 @@ public class LivreRecette {
 
 	return nReturn;
 	} // String
-public static void main(String[] args) {
-		
-
-		Aliment nAlimentA = new Aliment(300,"g","farine");
-		Aliment nAlimentB = new Aliment(300,"g","sucre");
-		Aliment nAlimentC = new Aliment(30,"g","beurre");			
-		Aliment nAlimentD = new Aliment(4,"","oeuf");
-		Aliment nAlimentE = new Aliment(1,"sachet","sucre vanillé");
-		Aliment nAlimentF = new Aliment(1,"l","lait");
-		Aliment nAlimentG = new Aliment(1,"","poulet");
-		Aliment nAlimentH = new Aliment(5,"c","curry");
-		Aliment nAlimentI = new Aliment(300,"g","carottes");
-		Aliment nAlimentJ = new Aliment(200,"g","courgettes");
-		Aliment nAlimentK = new Aliment(100,"g","épinards");
-		Aliment nAlimentL = new Aliment(1000,"g","pommes");
-		Aliment nAlimentM = new Aliment(500,"g","sucre");
-		Aliment nAlimentN = new Aliment(1000,"g","miel");
-		Aliment nAlimentO = new Aliment(500,"g","pate");
-		
-		// Pates au beurre
-		String nomA = "Pates au beurre";
-		String descriptifA =  "Faire chauffer les casseroles.\n Faire bouillir l'eau. \n Mettre les pates, quand c'est cuit mettre le beurre.";
-				
-		Recette nRecetteA = new Recette(nomA, descriptifA);
-		nRecetteA.ajouterIngredient(nAlimentO);
-		nRecetteA.ajouterIngredient(nAlimentC);
-				
-		// Gateau au yaourt
-		String nomB = "Gateau au yaourt";
-		String descriptifB =  "Mettre la farine, les oeufs, le sucre et le lait suivi du sucre vanillé, puis mettre au four. ";
-						
-		Recette nRecetteB = new Recette(nomB, descriptifB);
-		nRecetteB.ajouterIngredient(nAlimentA);
-		nRecetteB.ajouterIngredient(nAlimentB);
-		nRecetteB.ajouterIngredient(nAlimentF);
-		nRecetteB.ajouterIngredient(nAlimentD);
-		nRecetteB.ajouterIngredient(nAlimentE);
-				
-		// Poulet au curry
-		String nomC = "Poulet au curry";
-		String descriptifC =  "Mettre au four le poulet soupoudré de curry.";
-								
-		Recette nRecetteC = new Recette(nomC, descriptifC);
-		nRecetteC.ajouterIngredient(nAlimentG);
-		nRecetteC.ajouterIngredient(nAlimentH);
-				
-		// Soupe de légumes
-		String nomD = "Soupe de légumes";
-		String descriptifD =  "Mixer tout les légumes et faire cuire puis ajouter le beurre.";
-								
-		Recette nRecetteD = new Recette(nomD, descriptifD);
-		nRecetteD.ajouterIngredient(nAlimentI);
-		nRecetteD.ajouterIngredient(nAlimentJ);
-		nRecetteD.ajouterIngredient(nAlimentK);
-		nRecetteD.ajouterIngredient(nAlimentC);
-				
-		// Compotte de pomme
-		String nomE = "Compotte de pomme";
-		String descriptifE =  "Mixer toutes les pommes et faire cuire puis ajouter le sucre.";
-								
-		Recette nRecetteE = new Recette(nomE, descriptifE);
-		nRecetteE.ajouterIngredient(nAlimentL);
-		nRecetteE.ajouterIngredient(nAlimentM);
-				
-		// Poulet au miel
-		String nomF = "Poulet au miel";
-		String descriptifF =  "Faire cuire le poulet et arroser de miel";
-								
-		Recette nRecetteF = new Recette(nomF, descriptifF);
-		nRecetteF.ajouterIngredient(nAlimentG);
-		nRecetteF.ajouterIngredient(nAlimentN);
-				
-		// Création du livre de recette
-				
-		LivreRecette nLivreRecette = new LivreRecette("Thermomix");
-		nLivreRecette.ajouterRecette(nRecetteA);
-		nLivreRecette.ajouterRecette(nRecetteB);
-		nLivreRecette.ajouterRecette(nRecetteC);
-		nLivreRecette.ajouterRecette(nRecetteD);
-		nLivreRecette.ajouterRecette(nRecetteE);
-		nLivreRecette.ajouterRecette(nRecetteF);		
-		
-		nLivreRecette.afficher();
 	
-		System.out.println("Afficher une recette présente par son nom");
-		nLivreRecette.afficher("Compotte de pomme");
+	/**
+	 * @brief Cette fonction main() est utilisée uniquement pour la réalisation de tests unitaires.
+	 * 
+	 * Le périmètre observé est limité à l'ensemble des opérations de cette classe.
+	 */
+	public static void main(String[] args) {
 		
-		System.out.println("Afficher une recette non présente par son nom");
-		nLivreRecette.afficher("Compotte");
+		// créer un livre de recettes
+			System.out.println("création d'un livre de recette");
+			LivreRecette nLivreRecette= creerLivreRecette();
 		
+		// afficher l'ensemble du livre de recettes
+			System.out.println();
+			nLivreRecette.afficher();
+				
+		// afficher une recette présente dans le livre de recette
+			System.out.println("\nafficher une recette présente dans le livre de recette:");
+			nLivreRecette.afficher("Compote de pomme");
 		
-	}
+		// afficher une recette absente du livre de recette
+			System.out.println("\nafficher une recette absente du livre de recette:");
+			nLivreRecette.afficher("Compote");
+		
+		// afficher la liste des ingrédients d'une recette présente
+			System.out.println("\nafficher la liste des ingrédients d'une recette présente:");
+			testerListeIngredients(nLivreRecette, "Poulet au curry");
+
+		// afficher la liste des ingrédients d'une recette vide
+			System.out.println("\nafficher la liste des ingrédients d'une recette vide:");
+			testerListeIngredients(nLivreRecette, "Recette vide");
+			
+		// afficher la liste des ingrédients d'une recette inconnue
+			System.out.println("\nafficher la liste des ingrédients d'une recette inconnue:");
+			testerListeIngredients(nLivreRecette, "Recette inconnue");
+			
+	} // main
+	
+	/**
+	 * @brief créer un livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return LivreRecette une nouvelle recette
+	 */
+	private static LivreRecette creerLivreRecette() {
+		String nNom= "Thermomix";
+
+		LivreRecette nLivreRecette= new LivreRecette(nNom);
+			nLivreRecette.ajouterRecette(creerRecetteA());
+			nLivreRecette.ajouterRecette(creerRecetteB());
+			nLivreRecette.ajouterRecette(creerRecetteC());
+			nLivreRecette.ajouterRecette(creerRecetteD());
+		
+	return nLivreRecette;
+	} // LivreRecette
+
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteA() {
+		String nNom= "Pates au beurre";
+		String nDescription= " Faire chauffer les casseroles.\n Faire bouillir l'eau.\n Mettre les pates, quand c'est cuit mettre le beurre.";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+			nRecette.ajouterIngredient(new Aliment(500,"g","pate"));
+			nRecette.ajouterIngredient(new Aliment(30,"g","beurre"));
+		
+	return nRecette;
+	} // Recette
+
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteB() {
+		String nNom= "Gateau au yaourt";
+		String nDescription= " Mettre la farine, les oeufs, le sucre et le lait suivi du sucre vanillé, puis mettre au four.";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+			nRecette.ajouterIngredient(new Aliment(300,"g","farine"));
+			nRecette.ajouterIngredient(new Aliment(300,"g","sucre"));
+			nRecette.ajouterIngredient(new Aliment(1,"l","lait"));
+			nRecette.ajouterIngredient(new Aliment(4,"oeuf"));
+			nRecette.ajouterIngredient(new Aliment(1,"sachet","sucre vanillé"));
+		
+	return nRecette;
+	} // Recette
+	
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteC() {
+		String nNom= "Poulet au curry";
+		String nDescription= " Mettre au four le poulet saupoudré de curry.";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+			nRecette.ajouterIngredient(new Aliment(1,"poulet"));
+			nRecette.ajouterIngredient(new Aliment(5,"cuillère à café","curry"));
+		
+	return nRecette;
+	} // Recette
+
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteD() {
+		String nNom= "Recette vide";
+		String nDescription= " Le but est de tester une recette sans ingrédient.";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+
+	return nRecette;
+	} // Recette
+
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static void testerListeIngredients(LivreRecette pLivreRecette, String pNomRecette) {
+		
+	  	ListeRec nIngredients = pLivreRecette.retournerIngredients(pNomRecette);
+	  	
+		if(nIngredients == null) {
+			System.out.println("La recette "+pNomRecette+" n'est pas présente dans ce livre !");
+			
+		} else {
+			if(nIngredients.isVide()) {
+				System.out.println("La recette "+pNomRecette+" ne comporte pas d'ingrédient.");
+				
+			} else {
+				System.out.println("La recette "+pNomRecette+" comporte les ingrédients suivants:\n"
+						+nIngredients.toString());
+				
+			} // else
+		} // else
+	} // void
+	
 } // class
 
 

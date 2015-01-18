@@ -4,9 +4,7 @@
  * @brief xxxxxxxxxxxxxxxxxxxx
  */
 	
-	package include;
-
-import objet.Aliment;
+package include;
 
 /**
  * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -29,15 +27,6 @@ public class ListeRec {
 	} // constructeur par défaut
 
 	/**
-	 * Constructeur avec tête en paramêtre seulement
-	 * 
-	 * @param Ingredient tete
-	 */	
-	public ListeRec(Object pTete) {
-		this.construire(false, pTete, null);
-	} // constructeur
-
-	/**
 	 * Constructeur avec tête et liste en paramêtre
 	 * 
 	 * @param Ingredient tete, ListeIngredients liste
@@ -55,7 +44,7 @@ public class ListeRec {
 		this.isVide= pIsVide;
 		this.laTete= pTete;
 		this.leReste= pReste;
-	} // procédure
+	} // void
 
 	
 	// ------------------------------------------------------
@@ -71,15 +60,6 @@ public class ListeRec {
 	} // boolean
 
 	/**
-	 * Modifier l'état de la liste
-	 * 
-	 * @param boolean listeVide
-	 */
-	private void setVide(boolean pIsVide) {
-		this.isVide = pIsVide;
-	} // setter
-
-	/**
 	 * Donner la valeur de la tête
 	 * 
 	 * @return object pour l'objet contenu dans la tête de la liste
@@ -89,42 +69,15 @@ public class ListeRec {
 	} // object
 
 	/**
-	 * Modifier la tête de la liste
-	 * 
-	 * @param Object laTete
-	 */
-	private void setTete(Object pTete) {
-		this.laTete = pTete;
-	} // setter
-
-	/**
 	 * @return ListeRec pour renvoyer la liste restante
 	 */	
 	public ListeRec getReste() {
 		return leReste;
 	} // ListeRec
 
-	/**
-	 * Modifier la liste restante
-	 * 
-	 * @param ListeRec leReste
-	 */
-	private void setReste(ListeRec pReste) {
-		this.leReste = pReste;
-	} // setter
-
-	
 	// ------------------------------------------------------
 	// méthodes
-	
-	/**
-	 * Affiche une liste 
-	 */
-	public void afficher() {
-		System.out.println(this.toString());
-	} // procédure
 
-	
 	/**
 	 * surcharge de fonction
 	 * 
@@ -145,7 +98,7 @@ public class ListeRec {
 	} // String
 
 	/**
-	 * rechercher un produit ou une recette par son nom
+	 * rechercher un objet par son nom
 	 * 
 	 * @param ListeRec pListe, String pNomObjet
 	 * 
@@ -170,7 +123,7 @@ public class ListeRec {
 	} // Object
 
 	/**
-	 * rechercher un produit ou une recette
+	 * rechercher un objet
 	 * 
 	 * @param ListeRec pListe, Object pObjet
 	 * 
@@ -195,7 +148,7 @@ public class ListeRec {
 	} // Object
 	
 	/**
-	 * @return ListeRec pour renvoyer la liste obtenue après insertion d'un objet en tête
+	 * @return ListeRec liste obtenue après insertion d'un objet en tête
 	 */	
 	private ListeRec prefixer(Object val){
 		ListeRec liste = new ListeRec(val, this);
@@ -203,7 +156,7 @@ public class ListeRec {
 	} // ListeRec
 
 	/**
-	 * @return ListeRec pour renvoyer la liste obtenue après insertion d'un objet en fin
+	 * @return ListeRec liste obtenue après insertion d'un objet en fin
 	 */	
 	public ListeRec insert(ListeRec liste, Object val){
 		if (liste.isVide()){

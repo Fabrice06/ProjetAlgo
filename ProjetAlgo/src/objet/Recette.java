@@ -33,30 +33,12 @@ public class Recette {
 	} // constructeur par défaut
 
 	/**
-	 * Constructeur avec un nom et une liste d'ingrédients
-	 * 
-	 * @param String nom, ListeRec liste
-	 */	
-	public Recette(String nom, ListeRec liste){
-		this.construire(nom, "", liste);
-	} // constructeur
-
-	/**
 	 * Constructeur avec un nom et les étapes
 	 * 
 	 * @param String nom, String realisation
 	 */	
 	public Recette(String pNom, String pRealisation){
 		this.construire(pNom, pRealisation, new ListeRec());
-	} // constructeur
-	
-	/**
-	 * Constructeur avec un nom, les étapes et une liste d'ingrédients
-	 * 
-	 * @param String pNom, String pDescription, ListeRec pListe
-	 */	
-	public Recette(String pNom, String pRealisation, ListeRec pListe){
-		this.construire(pNom, pRealisation, pListe);
 	} // constructeur
 	
 	/**
@@ -68,7 +50,7 @@ public class Recette {
 		this.nom= pNom;
 		this.realisation= pRealisation;
 		this.liste= pListe;
-	} // procédure
+	} // void
 	
 	
 	// ------------------------------------------------------
@@ -77,28 +59,9 @@ public class Recette {
 	/**
 	 * @return String pour le nom
 	 */
-	public String getNom() {
+	private String getNom() {
 		return nom;
 	} // String
-	/**
-	 * @param String nom
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	} // setter
-	/**
-	 * @return String pour la réalisation
-	 */
-	public String getRealisation() {
-		return realisation;
-	} // String
-
-	/**
-	 * @param String realisation
-	 */
-	public void setRealisation(String realisation) {
-		this.realisation = realisation;
-	} // setter
 
 	/**
 	 * @return ListeRec pour la liste des ingrédients
@@ -106,14 +69,6 @@ public class Recette {
 	public ListeRec getIngredients() {
 		return liste;
 	} // ListeRec
-	
-	/**
-	 * @param ListeRec liste
-	 */
-	public void setIngredients(ListeRec nListeIngredients) {
-		this.liste = nListeIngredients;
-	} // setter
-	
 	
 	
 	// ------------------------------------------------------
@@ -126,14 +81,14 @@ public class Recette {
 	 */
 	public void ajouterIngredient(Aliment pIngredient){
 		this.liste = this.liste.insert(this.liste, pIngredient);
-	} // procédure
+	} // void
 	
 	/**
 	 * afficher la recette
 	 */
 	public void afficher() {
 		System.out.println(this.toString());	
-	} // procédure
+	} // void
 
 	/**
 	 * @brief surcharge de la fonction
@@ -193,5 +148,69 @@ public class Recette {
 
 	return nReturn;
 	} // String
+
 	
+	/**
+	 * @brief Cette fonction main() est utilisée uniquement pour la réalisation de tests unitaires.
+	 * 
+	 * Le périmètre observé est limité à l'ensemble des opérations de cette classe.
+	 */
+	public static void main(String[] args) {
+		
+		// créer une recette
+			System.out.println("création d'une recette");
+			Recette nRecetteA= creerRecetteA();
+			
+		// afficher	une recette
+			System.out.println();
+			nRecetteA.afficher();
+
+		// ---------------------------------------------------------------------------------------
+		// test equals
+			System.out.println("\ntests de la fonction equals() =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			
+			if(nRecetteA.equals("Pommes à la vanille")) System.out.println(" > l'objet " +nRecetteA.getNom()+ " est égal à la recette nommée Pommes à la vanille.");
+			if(!nRecetteA.equals("Recette X")) System.out.println(" > l'objet " +nRecetteA.getNom()+ " n'est pas égal à la recette nommée Recette X.");
+		
+			Recette nRecetteX= nRecetteA;
+			if(nRecetteA.equals(nRecetteX)) System.out.println(" > l'objet "+nRecetteA.getNom()+" est égal à l'objet "+nRecetteX.getNom());
+			
+			Recette nRecetteY= creerRecetteY();
+			if(!nRecetteA.equals(nRecetteY)) System.out.println(" > l'objet "+nRecetteA.getNom()+" n'est pas égal à l'objet "+nRecetteY.getNom());
+
+	} // main
+
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteA() {
+		String nNom= "Pommes à la vanille";
+		String nDescription= " Faire la recette !";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+			nRecette.ajouterIngredient(new Aliment(500,"g","pomme"));
+			nRecette.ajouterIngredient(new Aliment(3,"gousse","vanille"));
+		
+	return nRecette;
+	} // Recette
+	/**
+	 * @brief créer une nouvelle recette pour alimenter le livre de recettes (à utiliser pour les tests uniquement)
+	 * 
+	 * @return Recette une nouvelle recette
+	 */
+	private static Recette creerRecetteY() {
+		String nNom= "Gateau au yaourt";
+		String nDescription= " Mettre la farine, les oeufs, le sucre et le lait suivi du sucre vanillé, puis mettre au four.";
+		
+		Recette nRecette= new Recette(nNom, nDescription);
+			nRecette.ajouterIngredient(new Aliment(300,"g","farine"));
+			nRecette.ajouterIngredient(new Aliment(300,"g","sucre"));
+			nRecette.ajouterIngredient(new Aliment(1,"l","lait"));
+			nRecette.ajouterIngredient(new Aliment(4,"oeuf"));
+			nRecette.ajouterIngredient(new Aliment(1,"sachet","sucre vanillé"));
+		
+	return nRecette;
+	} // Recette
 } // class

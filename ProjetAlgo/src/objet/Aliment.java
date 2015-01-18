@@ -82,6 +82,13 @@ public class Aliment {
 		return nom;
 	} // String
 
+	/**
+	 * @return String pour l'unité de l'ingrédient
+	 */
+	public String getUnite() {
+		return unite;
+	} // String
+	
 	
 	// ------------------------------------------------------
 	// méthodes
@@ -94,6 +101,8 @@ public class Aliment {
 	} // boolean
 
 	/**
+	 * @param String pString
+	 * 
 	 * @return String une chaîne sans espace en double, sans espace au début et sans espace à la fin 
 	 */
 	private String nettoyerEspace(String pString) {
@@ -107,36 +116,79 @@ public class Aliment {
 	/** 
 	 * @return String l'unité telle qu'elle doit être affichée
 	 */
-	private String afficherUnite() {
-		
+	public String afficherUnite() {
 		String nReturn= "";
-		if (!this.unite.isEmpty()){
+		
+		if (!this.unite.isEmpty()) {
 			nReturn= this.unite;
 			
-			// si l'unité est g ou l alors on n'accorde pas l'unité en fonction de la quantité
-			Pattern nPattern = Pattern.compile("^[gl]$");  
-			Matcher nMatcher = nPattern.matcher(this.unite);
-			
-			if(!nMatcher.find()) {
-				if((this.quantite <= -2) || (this.quantite >= 2))  nReturn+= "s";
+			// affichage du pluriel
+			if((this.quantite <= -2) || (this.quantite >= 2)) {
+				nReturn= this.accorder(nReturn);
 			} // if
 		} // if
 
 	return nReturn;
 	} // String
 	/** 
+	 * Cette implémentation bien que correcte sur le plan technique, n'est pas la plus élégante ni la plus efficace.
+	 * Cependant, elle nous semble suffisante pour respecter le périmètre de ce projet.
+	 * 
+	 * @param String pString
+	 * 
+	 * @return String le terme accordé au pluriel
+	 */
+	private String accorder(String pString) {
+		String nReturn= pString;
+		
+		switch(nReturn) { // cette liste n'est pas exhaustive
+			case "beurre":			case "de beurre":
+			case "de curry":
+			case "eau":				case "d'eau":
+			case "g":
+			case "l":
+			case "de lait":
+			case "de levure":
+			case "de moutarde":
+			case "noix":
+			case "d'oeuf":
+			case "de poivre":
+			case "de poulet":
+			case "radis":			case "de radis":
+			case "riz":				case "de riz":
+			case "safran":			case "de safran":
+			case "sel":				case "de sel":
+			case "sucre":			case "de sucre":
+			case "sucre vanillé":	case "de sucre vanillé":
+			case "de vanille":
+				break;
+				
+			case "cuillère à café":
+				nReturn= "cuillères à café";
+				break;
+			case "cuillère à soupe":
+				nReturn= "cuillères à café";
+				break;
+				
+			default: nReturn+= "s";
+		} // switch
+		
+	return nReturn;
+	} // String
+	
+	/** 
 	 * @return String le nom destiné à l'affichage
 	 */
 	private String afficherNom() {
-		String nAliment= "beurre|lait|poivre|radis|riz|sel|sucre vanillé";
-		String nConteneur= "botte|cuillère à café|cuillère à soupe|motte|noix|paquet|pincée|poignée|sachet";
-		
+
 		String nReturn= "";
 		if(!this.nom.isEmpty()) {
 			
 			if (this.unite.isEmpty()) {
-				if(!nAliment.toLowerCase().contains(this.nom.toLowerCase())) {
-					if((this.quantite <= -2) || (this.quantite >= 2))  nReturn= this.nom+"s";
+				nReturn= this.nom;
+				// affichage du pluriel
+				if((this.quantite <= -2) || (this.quantite >= 2)) {
+					nReturn= this.accorder(nReturn);
 				} // if
 				
 			} else {
@@ -146,14 +198,9 @@ public class Aliment {
 				nReturn= (nMatcherA.find())? "d'" : "de ";
 				nReturn+= this.nom;
 				
-				// si l'unité est un contenant
-				if(nConteneur.toLowerCase().contains(this.unite.toLowerCase())) {
-					if(!nAliment.toLowerCase().contains(this.nom.toLowerCase())) {
-						if((this.quantite <= -2) || (this.quantite >= 2)) nReturn+= "s";
-					} // if
-				} // if
-
-			} // if	
+				// affichage du pluriel
+				nReturn= this.accorder(nReturn);
+			} // else
 		} // if
 
 	return nReturn;
@@ -211,36 +258,61 @@ public class Aliment {
 	 */
 	public String toString() {
 		// cette approche n'est pas des plus élégante, mais c'est la plus maintenable
-	return this.nettoyerEspace(this.quantite + " " + this.afficherUnite() + " " + this.afficherNom());
+	return " > " + this.nettoyerEspace(this.quantite + " " + this.afficherUnite() + " " + this.afficherNom());
 	} // String
 
-	
+	/**
+	 * @brief Cette fonction main() est utilisée uniquement pour la réalisation de tests unitaires.
+	 * 
+	 * Le périmètre observé est limité à l'ensemble des opérations de cette classe.
+	 */
 	public static void main(String[] args) {
+		
+		// ---------------------------------------------------------------------------------------
+		// jeu de test
+			System.out.println("création d'un jeu de test");
+			Aliment nAlimentA = new Aliment(4,"oeuf");
+			Aliment nAlimentB = new Aliment(1,"l","lait");
+			Aliment nAlimentC = new Aliment(5,"cuillère à café","curry");			
+			Aliment nAlimentD = new Aliment(2,"sachet ","sucre vanillé");
+			Aliment nAlimentE = new Aliment(1," botte","radis");
+			Aliment nAlimentF = new Aliment(2," botte","radis");
+			Aliment nAlimentG = new Aliment(1," botte ","carotte");
+			Aliment nAlimentH = new Aliment(2," botte ","carotte");
+			Aliment nAlimentI = new Aliment(4,"poulet");
+			Aliment nAlimentJ = new Aliment(40,"g","  poulet");
+			Aliment nAlimentK = new Aliment(30,"g","beurre   ");
+			Aliment nAlimentL = new Aliment(2,"noix","     beurre   ");
+		
+		// ---------------------------------------------------------------------------------------
+		// test toString
+			System.out.println("\ntest de la fonction toString() =-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=");
 			
-		Aliment nAlimentA = new Aliment(4,"oeuf");
-		Aliment nAlimentB = new Aliment(1,"l","lait");
-		Aliment nAlimentC = new Aliment(30,"g","beurre");			
-		Aliment nAlimentD = new Aliment(2,"sachet","sucre vanillé");
-		Aliment nAlimentE = new Aliment(1,"botte","radis");
-		Aliment nAlimentF = new Aliment(2,"botte","carotte");
+			System.out.println(" > nAlimentA.toString() retourne : "+ nAlimentA.toString());
+			System.out.println(" > nAlimentB.toString() retourne : "+ nAlimentB.toString());
+			System.out.println(" > nAlimentC.toString() retourne : "+ nAlimentC.toString());
+			System.out.println(" > nAlimentD.toString() retourne : "+ nAlimentD.toString());
+			System.out.println(" > nAlimentE.toString() retourne : "+ nAlimentE.toString());
+			System.out.println(" > nAlimentF.toString() retourne : "+ nAlimentF.toString());
+			System.out.println(" > nAlimentG.toString() retourne : "+ nAlimentG.toString());
+			System.out.println(" > nAlimentH.toString() retourne : "+ nAlimentH.toString());
+			System.out.println(" > nAlimentI.toString() retourne : "+ nAlimentI.toString());
+			System.out.println(" > nAlimentJ.toString() retourne : "+ nAlimentJ.toString());
+			System.out.println(" > nAlimentK.toString() retourne : "+ nAlimentK.toString());
+			System.out.println(" > nAlimentL.toString() retourne : "+ nAlimentL.toString());
 		
-		// test fonction toString()
-		System.out.println("nAlimentA.toString() retourne : "+ nAlimentA.toString());
-		System.out.println("nAlimentB.toString() retourne : "+ nAlimentB.toString());
-		System.out.println("nAlimentC.toString() retourne : "+ nAlimentC.toString());
-		System.out.println("nAlimentD.toString() retourne : "+ nAlimentD.toString());
-		System.out.println("nAlimentE.toString() retourne : "+ nAlimentE.toString());
-		System.out.println("nAlimentF.toString() retourne : "+ nAlimentF.toString());
+		// ---------------------------------------------------------------------------------------
+		// test equals
+			System.out.println("\ntest de la fonction equals() =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			
+			if(nAlimentA.equals("oeuf")) System.out.println(" > l'objet " +nAlimentA.getNom()+ " est égal à l'aliment nommé oeuf");
+			if(!nAlimentA.equals("lait")) System.out.println(" > l'objet " +nAlimentA.getNom()+ " n'est pas égal à l'aliment nommé lait");
 		
-		// test fonction equals()
-		if(nAlimentA.equals("oeuf")) System.out.println("l'aliment " +nAlimentA.getNom()+ " est égal à l'aliment oeuf");
-		if(!nAlimentA.equals("lait")) System.out.println("l'aliment " +nAlimentA.getNom()+ " n'est pas égal à l'aliment lait");
-		
-		Aliment nAlimentG= nAlimentA;
-		if(nAlimentA.equals(nAlimentG)) System.out.println("l'objet "+nAlimentA.getNom()+" est égal à l'objet "+nAlimentG.getNom());
-
-		if(nAlimentA.equals(new Aliment(8,"oeuf"))) System.out.println("l'aliment "+nAlimentA.getNom()+" est égal à l'objet oeuf");
+			Aliment nAlimentX= nAlimentA;
+			if(nAlimentA.equals(nAlimentX)) System.out.println(" > l'objet "+nAlimentA.getNom()+" est égal à l'objet "+nAlimentX.getNom());
+			
+			Aliment nAlimentY= new Aliment(8,"tomate");
+			if(!nAlimentA.equals(nAlimentY)) System.out.println(" > l'objet "+nAlimentA.getNom()+" n'est pas égal à l'objet "+nAlimentY.getNom());
 
 	} // main
-
 } // class
