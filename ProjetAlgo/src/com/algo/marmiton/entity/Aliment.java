@@ -219,7 +219,7 @@ public class Aliment {
 			return true;
 		} // if
 		
-		
+		//compléter ici le reste
 		
 	return false;
 	} // boolean
@@ -262,13 +262,6 @@ public class Aliment {
 			
 			return (this.quantite <= pAliment.quantite);
 		} // if
-		
-		if((this.regexFind(REGEX_MASSE, this.unite)) && (this.regexFind(REGEX_VOLUME, this.unite))) {
-			return false;
-		}
-		if((this.regexFind(REGEX_VOLUME, this.unite)) && (this.regexFind(REGEX_MASSE, this.unite))) {
-			return false;
-		}
 		
 		// la première unité à comparer est une masse
 		if(this.regexFind(REGEX_MASSE, this.unite)) {
