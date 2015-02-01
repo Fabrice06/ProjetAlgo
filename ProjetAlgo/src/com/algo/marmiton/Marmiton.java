@@ -51,27 +51,31 @@ public class Marmiton {
 		// afficher le contenu du garde-manger
 			
 			// globalement
+			System.out.println();
 		  	nGardeManger.afficher(); 						
 		  	
 		  	// ingrédient trouvé
 		  	nGardeManger.afficher("sucre vanillé"); 		
-		  	System.out.println();
+		  	
 		  	
 		  	// ingrédient non référencé
-		  	nGardeManger.afficher("sel de guérande"); 	
 		  	System.out.println();
+		  	nGardeManger.afficher("sel de guérande"); 	
+		  	
 		  
 		  	
 		// --------------------------------------------------------------------------------------- 	
 		// vérifier que le garde-manger est suffisant pour un ingrédient
 		  	
 		  	// ingrédient trouvé en quantité suffisante
-		  	nGardeManger.afficherQuantiteProduit(new Aliment(50,"g","pomme")); 	
 		  	System.out.println();
+		  	nGardeManger.afficherQuantiteProduit(new Aliment(50,"g","pomme")); 	
+		  	
 	
 		  	
 		// ---------------------------------------------------------------------------------------  	
 		// vérifier que le garde-manger est suffisant pour tout les ingrédients d'une recette
+		  	System.out.println();
 		  	String nNomRecette= "Poulet au curry";
 		  	ListeRec nIngredients = nLivreRecette.retournerIngredients(nNomRecette);
 				if(nIngredients == null) {
@@ -93,11 +97,12 @@ public class Marmiton {
 						} // else
 					} // else
 				} // else
-				System.out.println();
+				
 				
 				
 		// --------------------------------------------------------------------------------------- 
 		// donner la première recette possible réalisable en fonction du garde manger
+				System.out.println();
 				nNomRecette= "Poulet au miel";
 			  	nIngredients = nLivreRecette.retournerIngredients(nNomRecette);
 					if(nIngredients == null) {
