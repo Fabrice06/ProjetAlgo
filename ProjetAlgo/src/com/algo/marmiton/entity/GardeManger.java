@@ -87,32 +87,20 @@ public class GardeManger {
 	 */
 	public void afficherQuantiteProduit(Aliment pProduit) {
 		
-		//Aliment nAliment= (Aliment)this.liste.rechercher(this.liste, pProduit);
 		Aliment nAliment= (Aliment)this.liste.rechercher(pProduit);
 		
 		if(nAliment == null) {
 			System.out.println("Ce produit n'est pas référencé dans le garde-manger !\n"+pProduit);//.toString());
 
 		} else {
-			if(pProduit.getUnite().equals(nAliment.getUnite())) {
+			if(pProduit.estContenuDans(nAliment)) {
+				System.out.println("Ce produit est présent en quantité suffisante:\n"
+						+pProduit+" pour "+nAliment.afficherQuantite()+" "+nAliment.afficherUnite()
+						+" dans le garde-manger.");
 				
-				if(pProduit.getQuantite() <= nAliment.getQuantite()) {
-					System.out.println("Ce produit est présent en quantité suffisante:\n"
-							//+pProduit.toString()+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
-							+pProduit+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
-							+" dans le garde-manger.");
-					
-				} else {
-					System.out.println("Ce produit n'est pas présent en quantité suffisante:\n"
-							//+pProduit.toString()+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
-							+pProduit+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
-							+" dans le garde-manger.");
-				} // else
-					
 			} else {
-				System.out.println("Ce produit est référencé avec une unité différente:\n"
-						//+pProduit.toString()+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
-						+pProduit+" pour "+nAliment.getQuantite()+" "+nAliment.afficherUnite()
+				System.out.println("Ce produit n'est pas présent en quantité suffisante, ou présente une unité différente:\n"
+						+pProduit+" pour "+nAliment.afficherQuantite()+" "+nAliment.afficherUnite()
 						+" dans le garde-manger.");
 			} // else
 		} // else
@@ -127,14 +115,12 @@ public class GardeManger {
 	 */
 	private boolean verifierQuantiteProduit(Aliment pProduit) {
 
-		//Aliment nAliment= (Aliment)this.liste.rechercher(this.liste, pProduit);
 		Aliment nAliment= (Aliment)this.liste.rechercher(pProduit);
 		
 		if(nAliment == null) {
 			return false;
 
 		} else {
-			//return (pProduit.getUnite().equals(nAliment.getUnite()) & (pProduit.getQuantite() <= nAliment.getQuantite()));
 			return nAliment.estContenuDans(pProduit);
 		} // else
 

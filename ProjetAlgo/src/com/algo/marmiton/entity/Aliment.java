@@ -6,6 +6,7 @@
 	
 package com.algo.marmiton.entity;
 
+import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -65,31 +66,6 @@ public class Aliment {
 		this.nom= pNom.trim();
 	} // procédure
 	
-	
-	// ------------------------------------------------------
-	// Accesseurs
-	
-	/**
-	 * @return integer pour la quantité
-	 */
-	public double getQuantite() {
-		return quantite;
-	} // double
-	/**
-	 * @param int pQuantite
-	 */
-	private void setQuantite(double pQuantite) {
-		this.quantite = pQuantite;
-	} // setter
-
-	/**
-	 * @return String pour l'unité de l'ingrédient
-	 */
-	public String getUnite() {
-		return unite;
-	} // String
-	
-	
 	// ------------------------------------------------------
 	// Méthodes
 
@@ -114,6 +90,15 @@ public class Aliment {
 	} // String
 
 	/** 
+	 * @return String la quantité telle qu'elle doit être affichée
+	 */
+	public String afficherQuantite() {
+		DecimalFormat nDecimalFormat = new DecimalFormat("#.####");
+
+	return nDecimalFormat.format(this.quantite);
+	} // String
+	
+	/** 
 	 * @return String l'unité telle qu'elle doit être affichée
 	 */
 	public String afficherUnite() {
@@ -122,9 +107,11 @@ public class Aliment {
 		if (!this.unite.isEmpty()) {
 			nReturn= this.unite;
 			
-			// affichage du pluriel
-			if((this.quantite <= -2) || (this.quantite >= 2)) {
-				nReturn= this.accorder(nReturn);
+			if(!(this.isMasse() || this.isVolume())) {
+				// affichage du pluriel
+				if((this.quantite <= -2) || (this.quantite >= 2)) {
+					nReturn= this.accorder(nReturn);
+				} // if
 			} // if
 		} // if
 
@@ -142,12 +129,12 @@ public class Aliment {
 	private String accorder(String pString) {
 		String nReturn= pString;
 		
-		switch(nReturn) { // cette liste n'est pas exhaustive
+		switch(nReturn) { // cette liste n'est vraiment pas exhaustive
 			case "beurre":			case "de beurre":
+			case "café":			case "de café":
 			case "de curry":
 			case "eau":				case "d'eau":
-			case "g":
-			case "l":
+			case "farine":			case "de farine":
 			case "de lait":
 			case "de levure":
 			case "de moutarde":
@@ -162,6 +149,7 @@ public class Aliment {
 			case "sucre":			case "de sucre":
 			case "sucre vanillé":	case "de sucre vanillé":
 			case "de vanille":
+			case "vinaigre":			case "de vinaigre":
 				break;
 				
 			case "cuillère à café":
@@ -218,10 +206,47 @@ public class Aliment {
 			this.quantite+= pAliment.quantite;
 			return true;
 		} // if
+
+		if(this.isMasse() && pAliment.isMasse()) {
+			
+			this.quantite= this.convertir() + pAliment.convertir();
+			this.unite="g";
+			return true;
+		}
 		
-		//compléter ici le reste
+		if(this.isVolume() && pAliment.isVolume()) {
+			
+			this.quantite= this.convertir() + pAliment.convertir();
+			this.unite="l";
+			return true;
+		}
 		
-	return false;
+	return false; // valeur par défaut
+	} // boolean
+
+	/**
+	 * @return boolean vrai, si la quantité de l'aliment est exprimée en unités de masse
+	 */
+	private boolean isMasse() {
+		return this.regexFind(REGEX_MASSE, this.unite);
+	} // boolean
+	/**
+	 * @return boolean vrai, si la quantité de l'aliment est évaluée en unités de masse
+	 */
+	private boolean isMassePif() {
+		return this.regexFind(REGEX_MASSE_OPIF, this.unite);
+	} // boolean
+	/**
+	 * @return boolean vrai, si la quantité de l'aliment est exprimée en unités de volume
+	 */
+	private boolean isVolume() {
+		return this.regexFind(REGEX_VOLUME, this.unite);
+	} // boolean
+	/**
+	 * @return boolean vrai, si la quantité de l'aliment est évaluée en unités de volume
+	 */
+	private boolean isVolumePif() {
+		return this.regexFind(REGEX_VOLUME_OPIF, this.unite);
 	} // boolean
 	
 	/**
@@ -258,72 +283,56 @@ public class Aliment {
 	public boolean estContenuDans(Aliment pAliment) {
 
 		// pas de recherche d'unité, ni de conversion
-		if (this.unite.equals(pAliment.unite)) {
-			
+		if (this.unite.equals(pAliment.unite))
 			return (this.quantite <= pAliment.quantite);
-		} // if
+
 		
-		// la première unité à comparer est une masse
-		if(this.regexFind(REGEX_MASSE, this.unite)) {
+		// la première unité à comparer est de type masse
+		if(this.isMasse() || this.isMassePif()) {
 			
 			// la seconde unité à comparer est une masse
-			if(pAliment.regexFind(REGEX_MASSE, pAliment.unite)) {
+			if(pAliment.isMasse()) {
 				
-				return ((this.quantite*this.convertir(this.unite)) <= (pAliment.quantite*pAliment.convertir(pAliment.unite)));
+				if(this.isMasse()) {
+					return (this.convertir() <= pAliment.convertir());
+				} else {
+					return (this.estimerMasse() <= pAliment.convertir());
+				} // else
 			} // if
 			
 			// la seconde unité à comparer est une masse à estimer 
-			if(pAliment.regexFind(REGEX_MASSE_OPIF, pAliment.unite)) {
+			if(pAliment.isMassePif()) {
 				
-				return ((this.quantite*this.convertir(this.unite)) <= (pAliment.quantite*pAliment.estimerMasse(pAliment.unite)));
-			} // if
-		} // if
-
-		// la première unité à comparer est un volume
-		if(this.regexFind(REGEX_VOLUME, this.unite)) {
-			
-			// la seconde unité à comparer est un volume
-			if(pAliment.regexFind(REGEX_VOLUME, pAliment.unite)) {
-				
-				return ((this.quantite*this.convertir(this.unite)) <= (pAliment.quantite*pAliment.convertir(pAliment.unite)));
-			} // if
-			
-			// la seconde unité à comparer est un volume à estimer
-			if(pAliment.regexFind(REGEX_VOLUME_OPIF, pAliment.unite)) {
-				
-				return ((this.quantite*this.convertir(this.unite)) <= (pAliment.quantite*pAliment.estimerVolume(pAliment.unite)));
+				if(this.isMasse()) {
+					return (this.convertir() <= pAliment.estimerMasse());
+				} else {
+					return (this.estimerMasse() <= pAliment.estimerMasse());
+				} // else
 			} // if
 		} // if
 		
-		// la première unité à comparer est une masse à estimer
-		if(this.regexFind(REGEX_MASSE_OPIF, this.unite)) {
-
-			// la seconde unité à comparer est une masse
-			if(pAliment.regexFind(REGEX_MASSE, pAliment.unite)) {
-				
-				return ((this.quantite*this.estimerMasse(this.unite)) <= (pAliment.quantite*pAliment.convertir(pAliment.unite)));
-			} // if
-
-			// la seconde unité à comparer est une masse à estimer 
-			if(pAliment.regexFind(REGEX_MASSE_OPIF, pAliment.unite)) {
-				
-				return ((this.quantite*this.estimerMasse(this.unite)) <= (pAliment.quantite*pAliment.estimerMasse(pAliment.unite)));
-			} // if
-		} // if
-
-		// la première unité à comparer est un volume à estimer
-		if(this.regexFind(REGEX_VOLUME_OPIF, this.unite)) {
-
+		// la première unité à comparer est de type volume
+		if(this.isVolume() || this.isVolumePif()) {
+			
 			// la seconde unité à comparer est un volume
-			if(pAliment.regexFind(REGEX_VOLUME, pAliment.unite)) {
+			if(pAliment.isVolume()) {
 				
-				return ((this.quantite*this.estimerVolume(this.unite)) <= (pAliment.quantite*pAliment.convertir(pAliment.unite)));
+				if(this.isVolume()) {
+					return (this.convertir() <= pAliment.convertir());
+				} else {
+					return (this.estimerVolume() <= pAliment.convertir());
+				} // else
 			} // if
+				
 
 			// la seconde unité à comparer est un volume à estimer
-			if(pAliment.regexFind(REGEX_VOLUME_OPIF, pAliment.unite)) {
+			if(pAliment.isVolumePif()) {
 				
-				return ((this.quantite*this.estimerVolume(this.unite)) <= (pAliment.quantite*pAliment.estimerVolume(pAliment.unite)));
+				if(this.isVolume()) {
+					return (this.convertir() <= pAliment.estimerVolume());
+				} else {
+					return (this.estimerVolume() <= pAliment.estimerVolume());
+				} // else
 			} // if
 		} // if
 		
@@ -335,10 +344,10 @@ public class Aliment {
 	 * 
 	 * @return double, utilisé dans la conversion en gramme
 	 */
-	private double estimerMasse(String pUnite) {
+	private double estimerMasse() {
 		double nReturn= 1.00;
 
-		switch(pUnite) {
+		switch(this.unite) {
 			case "cuillère à café":		nReturn= 5;		break; 
 			case "cuillère à soupe":	nReturn= 15;	break; 
 			case "pincée":				nReturn= 0.4;	break; 
@@ -348,7 +357,7 @@ public class Aliment {
 			case "livre":				nReturn= 500;	break; 
 		} // switch
 
-	return nReturn;
+	return this.quantite * nReturn;
 	} // double	
 
 	/**
@@ -356,10 +365,10 @@ public class Aliment {
 	 * 
 	 * @return double, utilisé dans la conversion en litre
 	 */
-	private double estimerVolume(String pUnite) {
+	private double estimerVolume() {
 		double nReturn= 1.00;
 
-		switch(pUnite) {
+		switch(this.unite) {
 			case "cuillère à café":		nReturn= 0.005;	break; 
 			case "cuillère à soupe":	nReturn= 0.015;	break; 
 			case "zeste":				nReturn= 0.015;	break;
@@ -367,17 +376,15 @@ public class Aliment {
 			case "doigt":				nReturn= 0.025;	break;
 		} // switch
 
-	return nReturn;
+	return this.quantite * nReturn;
 	} // double	
 	
 	/**
-	 * @param String pUnite
-	 * 
-	 * @return double, utilisé dans la conversion en gramme ou en litre
+	 * @return double, conversion en gramme ou en litre
 	 */
-	private double convertir(String pUnite) {
+	private double convertir() {
 		double nReturn= 1.00;
-		String nUnite= pUnite.substring(0, pUnite.length()-1);
+		String nUnite= this.unite.substring(0, this.unite.length()-1);
 		
 		switch(nUnite) {
 			case "k":	nReturn= 1000;	break;
@@ -387,8 +394,8 @@ public class Aliment {
 			case "c":	nReturn= 0.01;	break;
 			case "m":	nReturn= 0.001;	break;
 		} // switch
-
-	return nReturn;
+		
+	return this.quantite * nReturn;
 	} // double	
 	
 	/**
@@ -455,8 +462,9 @@ public class Aliment {
 	 * @return description complète de l'objet
 	 */
 	public String toString() {
+		
 		// cette approche n'est pas des plus élégante, mais c'est la plus maintenable
-	return " > " + this.nettoyerEspace(this.quantite + " " + this.afficherUnite() + " " + this.afficherNom());
+	return " > " + this.nettoyerEspace(this.afficherQuantite() + " " + this.afficherUnite() + " " + this.afficherNom());
 	} // String
 
 } // class

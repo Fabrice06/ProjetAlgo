@@ -3,6 +3,8 @@
  * 
  * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  * définir les grandes lignes de la main page
+ * 
+ * on a supposé que:
  *
  */
 
@@ -147,10 +149,11 @@ public class Marmiton {
 			nGardeManger.ajouterProduit(new Aliment(300,"g","carotte"));
 			nGardeManger.ajouterProduit(new Aliment(200,"g","courgette"));
 			nGardeManger.ajouterProduit(new Aliment(100,"g","épinard"));
-			nGardeManger.ajouterProduit(new Aliment(1000,"g","pomme"));
+			nGardeManger.ajouterProduit(new Aliment(1,"kg","pomme"));
 			nGardeManger.ajouterProduit(new Aliment(500,"g","sucre"));
 			nGardeManger.ajouterProduit(new Aliment(300,"g","café"));
 			nGardeManger.ajouterProduit(new Aliment(1,"l","vinaigre"));
+			nGardeManger.ajouterProduit(new Aliment(500,"g","pomme"));
 			
 	return nGardeManger;
 	} // GardeManger
