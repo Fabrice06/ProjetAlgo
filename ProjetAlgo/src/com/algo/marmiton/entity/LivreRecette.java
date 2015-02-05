@@ -1,7 +1,7 @@
 /**
  * @file LivreRecette.java
  * 
- * @brief xxxxxxxxxxxxxxxxxxxxxxx
+ * @brief Fichier destiné à l'entité livre de recettes.
  */
 	
 package com.algo.marmiton.entity;

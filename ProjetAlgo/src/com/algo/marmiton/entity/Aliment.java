@@ -1,7 +1,7 @@
 /**
  * @file Aliment.java
  * 
- * @brief triplet constitué d'un nom, d'une quantité et d'une unité
+ * @brief Fichier destiné à l'entité aliment.
  */
 	
 package com.algo.marmiton.entity;
@@ -250,7 +250,6 @@ public class Aliment {
 	} // boolean
 	
 	/**
-	 * @brief  XXXXXXXXXX
 	 * 
 	 * @detail Les aliments dont la quantité est exprimée à la pièce, seront comparés entre eux.  
 	 * 			Les aliments solides dont la quantité est exprimée en unités de masse, seront comparés entre eux.
