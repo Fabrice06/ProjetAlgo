@@ -7,7 +7,7 @@
 package com.algo.marmiton.util;
 
 /**
- * Boite à outils pour manipuler une liste récursive
+ * @brief Boite à outils pour manipuler une liste récursive
  */
 public class ListeRec {
 

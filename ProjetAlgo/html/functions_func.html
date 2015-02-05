@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -68,17 +69,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="functions.html"><span>Tout</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Fonctions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
@@ -91,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,10 +108,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>accorder()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ad2062fcf0ccddc478c4c6903a17f5b14">Aliment</a>
+</li>
 <li>afficher()
 : <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#aa8d78f2252da16d4e77d2742f8544752">GardeManger</a>
-, <a class="el" href="d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a1b96eb2b920ad7c64c33643649de8c12">LivreRecette</a>
+, <a class="el" href="d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#aa8d78f2252da16d4e77d2742f8544752">LivreRecette</a>
 , <a class="el" href="d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#aa8d78f2252da16d4e77d2742f8544752">Recette</a>
+</li>
+<li>afficherNom()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a3afb679309f7270d5564e176626dbe7a">Aliment</a>
+</li>
+<li>afficherQuantite()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a4a8ebdbe31158ae245ca852e36f1f8b1">Aliment</a>
 </li>
 <li>afficherQuantiteProduit()
 : <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#ab620d3af0782208b296a22dec4f47d85">GardeManger</a>
@@ -133,6 +146,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </ul>
 
 
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>construire()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a29bff7314f3d3b16e5dd9e145e286a43">Aliment</a>
+, <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#aeb43f16decd958529fc5203e5af310b3">ListeRec</a>
+</li>
+<li>convertir()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#aa289542c15cbc7d2872494fe10079067">Aliment</a>
+</li>
+<li>creerGardeManger()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#ac8e532e980eacd19fd8f661d1278e589">Marmiton</a>
+</li>
+<li>creerLivreRecette()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#af497d574703bc35a731ce6b6514e5eb7">Marmiton</a>
+</li>
+<li>creerRecetteA()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#ab850404e809b3227b8caae831d43870a">Marmiton</a>
+</li>
+<li>creerRecetteB()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#a773c656f5da4ea4df00a564f98445819">Marmiton</a>
+</li>
+<li>creerRecetteC()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#abaaf8b1e06f4e3ff4af1bf5582775eda">Marmiton</a>
+</li>
+<li>creerRecetteD()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#a751ab282fd7ce6f2e0fe6239fc0d5fc9">Marmiton</a>
+</li>
+<li>creerRecetteE()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#a578d526ecf4f2920eefb46151b91217a">Marmiton</a>
+</li>
+<li>creerRecetteF()
+: <a class="el" href="db/d5c/classcom_1_1algo_1_1marmiton_1_1_marmiton.html#a7f8196b34062f1bb57f38a03050e0c17">Marmiton</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>equals()
 : <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a34b1a1495311c4940950e66cd2cd4310">Aliment</a>
@@ -141,27 +189,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>estContenuDans()
 : <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a8f543b60de94fe64b1ef7baad8d90a7d">Aliment</a>
 </li>
+<li>estimerMasse()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ae8c72433ee8bdf1adf6c1cdb32d24fd6">Aliment</a>
+</li>
+<li>estimerVolume()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ad2fad5bf41739876c364c1f1e31b6c2c">Aliment</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GardeManger()
+: <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#a4b62c1da0754f8ec965ea67e81ea21f0">GardeManger</a>
+</li>
 <li>getIngredients()
 : <a class="el" href="d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a7145ef834f80d477d8cd6cfc2325d7b3">Recette</a>
 </li>
 <li>getListe()
 : <a class="el" href="d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a032ba096ed1beaeba7949a70a5b7c414">LivreRecette</a>
 </li>
-<li>getQuantite()
-: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a564458db334ac22a3b640f0742984e15">Aliment</a>
+<li>getNom()
+: <a class="el" href="d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a526a4803729fc95e75be40820281e0be">Recette</a>
 </li>
 <li>getReste()
 : <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac7dcf6457f62a6887dedc50a413419c5">ListeRec</a>
 </li>
 <li>getTete()
 : <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a55a9873f2b812c5437e47b37fc484ade">ListeRec</a>
-</li>
-<li>getUnite()
-: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#af12fdf12e6815098d0de6c0aa346fb17">Aliment</a>
 </li>
 </ul>
 
@@ -178,16 +232,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>insert()
 : <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a306e501424009bb8f295d9ffa2ae821c">ListeRec</a>
 </li>
+<li>isMasse()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#aaba9d9862dc3f3ce2ada35d22606bc0c">Aliment</a>
+</li>
+<li>isMassePif()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a4c947b50188efc75cdfeea7701b2605e">Aliment</a>
+</li>
 <li>isVide()
 : <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a0d9189f14f19032b0c86ce896ab80da9">Aliment</a>
 , <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a0d9189f14f19032b0c86ce896ab80da9">ListeRec</a>
+</li>
+<li>isVolume()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ac785b08c46d75db0d948ec1eaffc4e32">Aliment</a>
+</li>
+<li>isVolumePif()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a4634e664c90b3500f3a731a3b042ebcc">Aliment</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>ListeRec()
-: <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#aa7afce3f4e8ad1f1edbe7e101ebecee5">ListeRec</a>
+: <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac774ad4bc51aff22920e7bac99fdd670">ListeRec</a>
 </li>
 <li>LivreRecette()
 : <a class="el" href="d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a2b2fae99b9ce9895a01214e7883d7592">LivreRecette</a>
@@ -202,7 +268,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </ul>
 
 
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>nettoyerEspace()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a44e01401927d283f3a513aedd823bda7">Aliment</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>prefixer()
+: <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a6cafbaa0053088c361b76a9484d53a10">ListeRec</a>
+</li>
 <li>premiereRecette()
 : <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#a5ca94e29d37d75983cd5aa5f4538c30c">GardeManger</a>
 </li>
@@ -215,6 +291,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </li>
 <li>rechercher()
 : <a class="el" href="d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">ListeRec</a>
+</li>
+<li>regexFind()
+: <a class="el" href="db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a81781defaa6cd63b3372ed9a9459956b">Aliment</a>
 </li>
 <li>retournerIngredients()
 : <a class="el" href="d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ab89c05a2da75523949b819bd090ec7ef">LivreRecette</a>
@@ -237,11 +316,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>verifierIngredients()
 : <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#a1122f05634d714b3a4ab16bea34f1ce8">GardeManger</a>
 </li>
+<li>verifierQuantiteProduit()
+: <a class="el" href="d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html#a80469a6d320ab37a0422c8ac03faf082">GardeManger</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche 1 Février 2015 19:34:07 pour Marmiton par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Février 2015 18:55:47 pour Marmiton par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

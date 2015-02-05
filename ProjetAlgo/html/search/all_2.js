@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['gardemanger',['GardeManger',['../d1/d71/classcom_1_1algo_1_1marmiton_1_1entity_1_1_garde_manger.html',1,'com::algo::marmiton::entity']]],
-  ['gardemanger_2ejava',['GardeManger.java',['../db/dc4/_garde_manger_8java.html',1,'']]],
-  ['getingredients',['getIngredients',['../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a7145ef834f80d477d8cd6cfc2325d7b3',1,'com::algo::marmiton::entity::Recette']]],
-  ['getliste',['getListe',['../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a032ba096ed1beaeba7949a70a5b7c414',1,'com::algo::marmiton::entity::LivreRecette']]],
-  ['getquantite',['getQuantite',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a564458db334ac22a3b640f0742984e15',1,'com::algo::marmiton::entity::Aliment']]],
-  ['getreste',['getReste',['../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac7dcf6457f62a6887dedc50a413419c5',1,'com::algo::marmiton::util::ListeRec']]],
-  ['gettete',['getTete',['../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a55a9873f2b812c5437e47b37fc484ade',1,'com::algo::marmiton::util::ListeRec']]],
-  ['getunite',['getUnite',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#af12fdf12e6815098d0de6c0aa346fb17',1,'com::algo::marmiton::entity::Aliment']]]
+  ['equals',['equals',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a34b1a1495311c4940950e66cd2cd4310',1,'com.algo.marmiton.entity.Aliment.equals()'],['../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a34b1a1495311c4940950e66cd2cd4310',1,'com.algo.marmiton.entity.Recette.equals()']]],
+  ['estcontenudans',['estContenuDans',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#a8f543b60de94fe64b1ef7baad8d90a7d',1,'com::algo::marmiton::entity::Aliment']]],
+  ['estimermasse',['estimerMasse',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ae8c72433ee8bdf1adf6c1cdb32d24fd6',1,'com::algo::marmiton::entity::Aliment']]],
+  ['estimervolume',['estimerVolume',['../db/ddc/classcom_1_1algo_1_1marmiton_1_1entity_1_1_aliment.html#ad2fad5bf41739876c364c1f1e31b6c2c',1,'com::algo::marmiton::entity::Aliment']]]
 ];

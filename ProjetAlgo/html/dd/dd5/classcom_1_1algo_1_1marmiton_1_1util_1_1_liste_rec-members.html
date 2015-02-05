@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetages</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Fichiers</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>algo</b></li><li class="navelem"><b>marmiton</b></li><li class="navelem"><b>util</b></li><li class="navelem"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../d8/dee/namespacecom.html">com</a></li><li class="navelem"><a class="el" href="../../da/db5/namespacecom_1_1algo.html">algo</a></li><li class="navelem"><a class="el" href="../../d6/da8/namespacecom_1_1algo_1_1marmiton.html">marmiton</a></li><li class="navelem"><a class="el" href="../../d6/d67/namespacecom_1_1algo_1_1marmiton_1_1util.html">util</a></li><li class="navelem"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,19 +92,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
 
 <p>Liste complète des membres de <a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac7dcf6457f62a6887dedc50a413419c5">getReste</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a55a9873f2b812c5437e47b37fc484ade">getTete</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a306e501424009bb8f295d9ffa2ae821c">insert</a>(Object pObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#aeb43f16decd958529fc5203e5af310b3">construire</a>(boolean pIsVide, Object pTete, ListeRec pReste)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac7dcf6457f62a6887dedc50a413419c5">getReste</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a55a9873f2b812c5437e47b37fc484ade">getTete</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a306e501424009bb8f295d9ffa2ae821c">insert</a>(Object pObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a5cd8abb2dfb04fa5674f350e68d756ac">isVide</a></td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a0d9189f14f19032b0c86ce896ab80da9">isVide</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ListeRec</b>() (défini dans <a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a>)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a79adaee320918d6ea486b26698a9201c">laTete</a></td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a7eeb0e7c6c052017bcae793c7e4fa51a">leReste</a></td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ac774ad4bc51aff22920e7bac99fdd670">ListeRec</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#aa7afce3f4e8ad1f1edbe7e101ebecee5">ListeRec</a>(Object pTete, ListeRec pReste)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">rechercher</a>(String pNomObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a28881e82abc36abaca7bfe7925c1dc38">rechercher</a>(Object pObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a6cafbaa0053088c361b76a9484d53a10">prefixer</a>(Object pObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">rechercher</a>(String pNomObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a28881e82abc36abaca7bfe7925c1dc38">rechercher</a>(Object pObjet)</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</td><td class="entry"><a class="el" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche 1 Février 2015 19:34:07 pour Marmiton par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Février 2015 18:55:47 pour Marmiton par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

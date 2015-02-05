@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Marmiton:  Fichier source de src/com/algo/marmiton/entity/LivreRecette.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Marmiton
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetages</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_541eb0a6c58a7690acc5b848a4b1b724.html">com</a></li><li class="navelem"><a class="el" href="../../dir_4cfa48c50afc0ba638af81dfff4b7036.html">algo</a></li><li class="navelem"><a class="el" href="../../dir_72f3e1afadbb44ce3dc7ca91604f0fb5.html">marmiton</a></li><li class="navelem"><a class="el" href="../../dir_769a92b920e4300e874834ef9634ac00.html">entity</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LivreRecette.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/db8/_livre_recette_8java.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">package </span>com.algo.marmiton.entity;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d8/dee/namespacecom.html">com</a>.<a class="code" href="../../da/db5/namespacecom_1_1algo.html">algo</a>.<a class="code" href="../../d6/da8/namespacecom_1_1algo_1_1marmiton.html">marmiton</a>.<a class="code" href="../../d6/d67/namespacecom_1_1algo_1_1marmiton_1_1util.html">util</a>.<a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html">   22</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html">LivreRecette</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// ------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Attributs</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#adc52af411a200d43a5a06a142a6f87ca">   27</a></span>&#160;    <span class="keyword">private</span> String <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#adc52af411a200d43a5a06a142a6f87ca">nom</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a5e33b5c862e482492de5619344da9db2">   28</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a5e33b5c862e482492de5619344da9db2">liste</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// ------------------------------------------------------</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Constructeurs</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a2b2fae99b9ce9895a01214e7883d7592">   36</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a2b2fae99b9ce9895a01214e7883d7592">LivreRecette</a>(String pNom){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this.nom= pNom;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this.liste= <span class="keyword">new</span> <a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    } <span class="comment">// constructeur</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// ------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Accesseurs</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a032ba096ed1beaeba7949a70a5b7c414">   47</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a032ba096ed1beaeba7949a70a5b7c414">getListe</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a5e33b5c862e482492de5619344da9db2">liste</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="comment">// ListeRec</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// ------------------------------------------------------</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Méthodes</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#abe83b1cfd3aaecb5d85bdd8429ad53cb">   59</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#abe83b1cfd3aaecb5d85bdd8429ad53cb">ajouterRecette</a>(<a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">Recette</a> pRecette) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        this.liste = this.liste.<a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a306e501424009bb8f295d9ffa2ae821c">insert</a>(pRecette);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="comment">// void</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#aa8d78f2252da16d4e77d2742f8544752">   66</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#aa8d78f2252da16d4e77d2742f8544752">afficher</a>() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        System.out.println(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    } <span class="comment">// void</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a1b96eb2b920ad7c64c33643649de8c12">   75</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a1b96eb2b920ad7c64c33643649de8c12">afficher</a>(String pNomRecette) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">Recette</a> nRecette= (<a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">Recette</a>)this.liste.<a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">rechercher</a>(pNomRecette);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        String nMsg= <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span>(nRecette == null) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            nMsg= <span class="stringliteral">&quot;La recette &quot;</span>+pNomRecette+<span class="stringliteral">&quot; n&#39;est pas présente dans ce livre !&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            nMsg= <span class="stringliteral">&quot;La recette &quot;</span>+pNomRecette+<span class="stringliteral">&quot; est présente dans ce livre !\n&quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            nMsg+= nRecette;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="comment">// else</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        System.out.println(nMsg);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="comment">// void</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ab89c05a2da75523949b819bd090ec7ef">   98</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">ListeRec</a> <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ab89c05a2da75523949b819bd090ec7ef">retournerIngredients</a>(String pNomRecette) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">Recette</a> nRecette= (<a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">Recette</a>)this.liste.<a class="code" href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">rechercher</a>(pNomRecette);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span>(nRecette == null) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span> null;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">return</span> nRecette.<a class="code" href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a7145ef834f80d477d8cd6cfc2325d7b3">getIngredients</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        } <span class="comment">// else</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    } <span class="comment">// ListeRec</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ad146fa8579a5f8a876c4688cc5a68520">  116</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>() {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        String nReturn= <span class="stringliteral">&quot;livre de recette: &quot;</span>+this.nom+<span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        nReturn+= this.<a class="code" href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a5e33b5c862e482492de5619344da9db2">liste</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> nReturn;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="comment">// String</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;} <span class="comment">// class</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="ttc" id="namespacecom_1_1algo_1_1marmiton_1_1util_html"><div class="ttname"><a href="../../d6/d67/namespacecom_1_1algo_1_1marmiton_1_1util.html">com.algo.marmiton.util</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da2/_liste_rec_8java_source.html#l00007">ListeRec.java:7</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_a032ba096ed1beaeba7949a70a5b7c414"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a032ba096ed1beaeba7949a70a5b7c414">com.algo.marmiton.entity.LivreRecette.getListe</a></div><div class="ttdeci">ListeRec getListe()</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00047">LivreRecette.java:47</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_a5e33b5c862e482492de5619344da9db2"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a5e33b5c862e482492de5619344da9db2">com.algo.marmiton.entity.LivreRecette.liste</a></div><div class="ttdeci">ListeRec liste</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00028">LivreRecette.java:28</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_a2b2fae99b9ce9895a01214e7883d7592"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a2b2fae99b9ce9895a01214e7883d7592">com.algo.marmiton.entity.LivreRecette.LivreRecette</a></div><div class="ttdeci">LivreRecette(String pNom)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00036">LivreRecette.java:36</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec_html_a306e501424009bb8f295d9ffa2ae821c"><div class="ttname"><a href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a306e501424009bb8f295d9ffa2ae821c">com.algo.marmiton.util.ListeRec.insert</a></div><div class="ttdeci">ListeRec insert(Object pObjet)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da2/_liste_rec_8java_source.html#l00164">ListeRec.java:164</a></div></div>
+<div class="ttc" id="namespacecom_html"><div class="ttname"><a href="../../d8/dee/namespacecom.html">com</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec_html_a9bf905d0f7ce6e52271dda66751dbf81"><div class="ttname"><a href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html#a9bf905d0f7ce6e52271dda66751dbf81">com.algo.marmiton.util.ListeRec.rechercher</a></div><div class="ttdeci">Object rechercher(String pNomObjet)</div><div class="ttdoc">Rechercher un objet par son nom. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da2/_liste_rec_8java_source.html#l00106">ListeRec.java:106</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html">com.algo.marmiton.entity.LivreRecette</a></div><div class="ttdoc">Le livre de recette est une collection de recettes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00022">LivreRecette.java:22</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_a1b96eb2b920ad7c64c33643649de8c12"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#a1b96eb2b920ad7c64c33643649de8c12">com.algo.marmiton.entity.LivreRecette.afficher</a></div><div class="ttdeci">void afficher(String pNomRecette)</div><div class="ttdoc">Afficher une recette décrite par son nom, si elle existe. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00075">LivreRecette.java:75</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_abe83b1cfd3aaecb5d85bdd8429ad53cb"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#abe83b1cfd3aaecb5d85bdd8429ad53cb">com.algo.marmiton.entity.LivreRecette.ajouterRecette</a></div><div class="ttdeci">void ajouterRecette(Recette pRecette)</div><div class="ttdoc">Permets l&#39;ajout d&#39;une recette dans le livre de recettes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00059">LivreRecette.java:59</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette_html_a7145ef834f80d477d8cd6cfc2325d7b3"><div class="ttname"><a href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html#a7145ef834f80d477d8cd6cfc2325d7b3">com.algo.marmiton.entity.Recette.getIngredients</a></div><div class="ttdeci">ListeRec getIngredients()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7b/_recette_8java_source.html#l00057">Recette.java:57</a></div></div>
+<div class="ttc" id="namespacecom_1_1algo_1_1marmiton_html"><div class="ttname"><a href="../../d6/da8/namespacecom_1_1algo_1_1marmiton.html">com.algo.marmiton</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_aa8d78f2252da16d4e77d2742f8544752"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#aa8d78f2252da16d4e77d2742f8544752">com.algo.marmiton.entity.LivreRecette.afficher</a></div><div class="ttdeci">void afficher()</div><div class="ttdoc">Afficher toutes les recettes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00066">LivreRecette.java:66</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette_html"><div class="ttname"><a href="../../d8/d4e/classcom_1_1algo_1_1marmiton_1_1entity_1_1_recette.html">com.algo.marmiton.entity.Recette</a></div><div class="ttdoc">Cette classe permet de manipuler l&#39;objet recette. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7b/_recette_8java_source.html#l00021">Recette.java:21</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec_html"><div class="ttname"><a href="../../d9/df9/classcom_1_1algo_1_1marmiton_1_1util_1_1_liste_rec.html">com.algo.marmiton.util.ListeRec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da2/_liste_rec_8java_source.html#l00012">ListeRec.java:12</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_ab89c05a2da75523949b819bd090ec7ef"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ab89c05a2da75523949b819bd090ec7ef">com.algo.marmiton.entity.LivreRecette.retournerIngredients</a></div><div class="ttdeci">ListeRec retournerIngredients(String pNomRecette)</div><div class="ttdoc">Renvoyer la liste des ingrédients de la recette. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00098">LivreRecette.java:98</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_ad146fa8579a5f8a876c4688cc5a68520"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#ad146fa8579a5f8a876c4688cc5a68520">com.algo.marmiton.entity.LivreRecette.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdoc">surcharge de la fonction </div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00116">LivreRecette.java:116</a></div></div>
+<div class="ttc" id="classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette_html_adc52af411a200d43a5a06a142a6f87ca"><div class="ttname"><a href="../../d0/d09/classcom_1_1algo_1_1marmiton_1_1entity_1_1_livre_recette.html#adc52af411a200d43a5a06a142a6f87ca">com.algo.marmiton.entity.LivreRecette.nom</a></div><div class="ttdeci">String nom</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/_livre_recette_8java_source.html#l00027">LivreRecette.java:27</a></div></div>
+<div class="ttc" id="namespacecom_1_1algo_html"><div class="ttname"><a href="../../da/db5/namespacecom_1_1algo.html">com.algo</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi 5 Février 2015 18:55:47 pour Marmiton par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>
