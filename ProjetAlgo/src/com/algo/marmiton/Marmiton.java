@@ -117,7 +117,6 @@ public class Marmiton {
 							if(nGardeManger.verifierIngredients(nIngredients)) {
 								System.out.println("Il est possible de réaliser la recette "+nNomRecette
 										+", car tous les ingrédients sont présents dans le garde-manger.");
-								
 							} else {
 								System.out.println("Il n'est pas possible de réaliser la recette "+nNomRecette
 										+", car tous les ingrédients ne sont pas présents dans le garde-manger.");
