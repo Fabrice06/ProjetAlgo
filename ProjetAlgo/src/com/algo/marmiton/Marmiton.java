@@ -1,10 +1,9 @@
 /**
- * @mainpage voici la main page
+ * @mainpage Présentation du projet.
  * 
- * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
- * définir les grandes lignes de la main page
  * 
- * on a supposé que:
+ * Le but de l'application est de gérer une liste de recettes, il sera proposé une interface qui 
+ * permette de réaliser un certain nombre d'actions.
  *
  */
 
@@ -12,8 +11,6 @@
  * @file Marmiton.java
  * 
  * @brief Point d'entrée du programme
- * 
- * @details xxxxxxxxxxxxx détails
  */
 
 package com.algo.marmiton;
@@ -26,7 +23,7 @@ import com.algo.marmiton.util.ListeRec;
 public class Marmiton {
 
 	/**
-	 * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx donner les grandes lignes de ce qui va se passer dans ce main
+	 * Execution des différentes méthodes relatives au TP
 	 */
 	public static void main(String[] args) {
 		

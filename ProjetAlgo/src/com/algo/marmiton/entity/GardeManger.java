@@ -1,7 +1,7 @@
 /**
  * @file GardeManger.java
  * 
- * @brief xxxxxxxxxxxxxxxxxxxxxxx
+ * @brief Fichier destiné à l'entité garde-manger.
  */
 	
 package com.algo.marmiton.entity;

@@ -1,13 +1,13 @@
 /**
  * @file ListeRec.java
  * 
- * @brief xxxxxxxxxxxxxxxxxxxx
+ * @brief Fichier destiné à l'entité liste récursive.
  */
 	
 package com.algo.marmiton.util;
 
 /**
- * xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ * Boite à outils pour manipuler une liste récursive
  */
 public class ListeRec {
 
